@@ -1,14 +1,21 @@
 package entity;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import com.vercer.engine.persist.annotation.Key;
+import entity.Employee.Data.Person;
 
-public class Employee {
-	public static class Data implements Serializable {
+@XmlRootElement public class Employee {
+	private static final long serialVersionUID = 1L;
+	@XmlAttribute @Key protected Long id;
+	@XmlElement(required = true) protected Person person;
+	@XmlElement(required = true) protected Data data;
+	@XmlElement(required = true) protected Date modifiedDate;
+
+	@XmlRootElement public static class Data {
 		private static final long serialVersionUID = 1L;
 		@XmlAttribute @Key protected Long id;
 		@XmlElement(required = true) protected String creditCard;
@@ -21,7 +28,7 @@ public class Employee {
 		@XmlElement(required = false) protected List<CompensationDateSpan> std;
 		@XmlElement(required = false) protected List<CompensationDateSpan> ltd;
 
-		public static class CompensationDateSpan {
+		@XmlRootElement public static class CompensationDateSpan {
 			private static final long serialVersionUID = 1L;
 			@XmlAttribute @Key protected Long id;
 			@XmlElement(required = true) protected Date start;
@@ -29,7 +36,7 @@ public class Employee {
 			@XmlElement(required = true) protected Boolean compensated;
 		}
 
-		public static class Person {
+		@XmlRootElement public static class Person {
 			private static final long serialVersionUID = 1L;
 			@XmlAttribute @Key protected Long id;
 			@XmlElement(required = true) protected Boolean isMale;
@@ -37,7 +44,7 @@ public class Employee {
 			@XmlElement(required = true) protected Date birthday;
 			@XmlElement(required = false) protected ContactInfo iCi;
 
-			public static class ContactInfo {
+			@XmlRootElement public static class ContactInfo {
 				private static final long serialVersionUID = 1L;
 				@XmlAttribute @Key protected Long id;
 				@XmlElement(required = false) protected List<String> emailAddresses;
