@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE project>
+<project name="Filter XML">
+	<!-- Path variable declarations -->
+	<property name='app.version' value='0.1' />
+	<property name='app.name' value='Filter XML' />
+
+	<property name="src.dir" value="src" />
+	<property name="lib.dir" value="lib" />
+	<property name="classes.dir" value="classes" />
+	<property name="data.dir" value="data" />
+	<property name="data.schema.dir" value="${data.dir}/schema" />
+	<property name="data.classes.dir" value="${data.dir}/classes" />
+
+	<!-- Classes and Jars used to compile and test the application -->
+	<path id="classpath">
+		<pathelement location="${classes.dir}" />
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Defines XJC and SchemaGen tasks -->
+	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+		<classpath>
+			<fileset dir="lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="schemagen" classname="com.sun.tools.jxc.SchemaGenTask">
+		<classpath>
+			<fileset dir="lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Compile and test the application -->
+	<target name="clean" description="Removes the build directories">
+		<echo message="Cleans the environment" />
+		<delete dir="${classes.dir}" />
+		<delete dir="${data.classes.dir}" />
+		<delete dir="${data.schema.dir}" />
+	</target>
+
+	<target name="compile" description="Compiles source code">
+		<echo message="Compile the classes" />
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="generate-schema" depends='compile' description="Generate schema">
+		<echo message="Generating schemas..." />
+		<mkdir dir="${data.schema.dir}" />
+		<schemagen srcdir="${src.dir}" destdir="${data.schema.dir}">
+			<classpath>
+				<fileset dir="lib" includes="*.jar" />
+			</classpath>
+		</schemagen>
+	</target>
+
+	<target name="compile-schema" depends='compile' description="Compile schema">
+		<echo message="Compiling the schema..." />
+		<mkdir dir="${data.classes.dir}" />
+		<xjc schema="${data.schema.dir}/schema1.xsd" destdir="${data.classes.dir}"
+			package="entity" removeOldOutput="yes" />
+	</target>
+</project>
