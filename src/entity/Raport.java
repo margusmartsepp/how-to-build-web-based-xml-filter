@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for raport complex type.
@@ -42,7 +43,19 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "raport", propOrder = {
 		"depWageSum", "grandTotal" }) public class Raport {
+	
+	/**
+	 * Instantiates a new raport.
+	 */
 	public Raport() {}
+	
+	/**
+	 * Instantiates a new raport.
+	 *
+	 * @param depWageSum the dep wage sum
+	 * @param grandTotal the grand total
+	 * @param id the id
+	 */
 	public Raport(HashMap<String, Double> depWageSum, double grandTotal, Long id) {
 		super();
 		this.depWageSum = depWageSum;
@@ -50,14 +63,24 @@ import javax.xml.bind.annotation.XmlType;
 		this.id = id;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override public String toString() {
 		return String.format("Raport [id=%s, depWageSum=%s, grandTotal=%s]", id,
 				depWageSum, grandTotal);
 	}
 
+	/** The dep wage sum. */
 	protected HashMap<String, Double> depWageSum;
+	
+	/** The bd. */
 	transient private BigDecimal bd = BigDecimal.ZERO;
+	
+	/** The grand total. */
 	protected double grandTotal;
+	
+	/** The id. */
 	@XmlAttribute protected Long id;
 
 	/**
@@ -83,7 +106,8 @@ import javax.xml.bind.annotation.XmlType;
 
 	/**
 	 * Gets the value of the grandTotal property.
-	 * 
+	 *
+	 * @return the grand total
 	 */
 	public double getGrandTotal() {
 		return grandTotal;
@@ -91,7 +115,8 @@ import javax.xml.bind.annotation.XmlType;
 
 	/**
 	 * Sets the value of the grandTotal property.
-	 * 
+	 *
+	 * @param value the new grand total
 	 */
 	public void setGrandTotal(double value) {
 		this.grandTotal = value;

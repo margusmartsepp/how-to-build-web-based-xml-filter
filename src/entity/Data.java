@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for data complex type.
@@ -54,17 +55,55 @@ import javax.xml.datatype.XMLGregorianCalendar;
 		"creditCard", "occupationTitle", "departmentTitle", "hireDate", "hourRate",
 		"vacation", "holiday", "std", "ltd" }) public class Data {
 
+	/** The credit card. */
 	@XmlElement(required = true) protected String creditCard;
+	
+	/** The occupation title. */
 	@XmlElement(required = true) protected String occupationTitle;
+	
+	/** The department title. */
 	@XmlElement(required = true) protected String departmentTitle;
+	
+	/** The hire date. */
 	@XmlElement(required = true) protected Date hireDate;
+	
+	/** The hour rate. */
 	protected double hourRate;
+	
+	/** The vacation. */
 	protected List<CompensationDateSpan> vacation;
+	
+	/** The holiday. */
 	protected List<CompensationDateSpan> holiday;
+	
+	/** The std. */
 	protected List<CompensationDateSpan> std;
+	
+	/** The ltd. */
 	protected List<CompensationDateSpan> ltd;
+	
+	/** The id. */
 	@XmlAttribute protected Long id;
+	
+	/**
+	 * Instantiates a new data.
+	 */
 	public Data() {};
+	
+	/**
+	 * Instantiates a new data.
+	 *
+	 * @param id the id
+	 * @param creditCard the credit card
+	 * @param occupationTitle the occupation title
+	 * @param departmentTitle the department title
+	 * @param hireDate the hire date
+	 * @param hourRate the hour rate
+	 * @param vacation the vacation
+	 * @param holiday the holiday
+	 * @param std the std
+	 * @param ltd the ltd
+	 */
 	public Data(Long id, String creditCard, String occupationTitle,
 			String departmentTitle, Date hireDate, double hourRate,
 			List<CompensationDateSpan> vacation, List<CompensationDateSpan> holiday,
@@ -155,6 +194,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 		return hireDate;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override public String toString() {
 		return String.format(
 				"Data [id=%s, creditCard=%s, occupationTitle=%s, departmentTitle=%s, hireDate=%s, hourRate=%s, vacation=%s, holiday=%s, std=%s, ltd=%s]",
@@ -175,7 +217,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 	/**
 	 * Gets the value of the hourRate property.
-	 * 
+	 *
+	 * @return the hour rate
 	 */
 	public double getHourRate() {
 		return hourRate;
@@ -183,7 +226,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 	/**
 	 * Sets the value of the hourRate property.
-	 * 
+	 *
+	 * @param value the new hour rate
 	 */
 	public void setHourRate(double value) {
 		this.hourRate = value;
@@ -208,9 +252,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
+	 *
+	 * @return the vacation
 	 * {@link CompensationDateSpan }
-	 * 
-	 * 
 	 */
 	public List<CompensationDateSpan> getVacation() {
 		if (vacation == null) {
@@ -238,9 +282,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
+	 *
+	 * @return the holiday
 	 * {@link CompensationDateSpan }
-	 * 
-	 * 
 	 */
 	public List<CompensationDateSpan> getHoliday() {
 		if (holiday == null) {
@@ -268,9 +312,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
+	 *
+	 * @return the std
 	 * {@link CompensationDateSpan }
-	 * 
-	 * 
 	 */
 	public List<CompensationDateSpan> getStd() {
 		if (std == null) {
@@ -298,9 +342,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
+	 *
+	 * @return the ltd
 	 * {@link CompensationDateSpan }
-	 * 
-	 * 
 	 */
 	public List<CompensationDateSpan> getLtd() {
 		if (ltd == null) {

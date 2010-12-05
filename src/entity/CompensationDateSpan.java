@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for compensationDateSpan complex type.
@@ -45,15 +46,26 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "compensationDateSpan",
 		propOrder = { "start", "end", "compensated" }) public class CompensationDateSpan {
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override public String toString() {
 		return String.format(
 				"CompensationDateSpan [id=%s, start=%s, end=%s, compensated=%s]", id,
 				start, end, compensated);
 	}
 
+	/** The start. */
 	@XmlElement(required = true) protected Date start;
+
+	/** The end. */
 	@XmlElement(required = true) protected Date end;
+
+	/** The compensated. */
 	protected boolean compensated;
+
+	/** The id. */
 	@XmlAttribute protected Long id;
 
 	/**
@@ -101,6 +113,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the compensated property.
 	 * 
+	 * @return true, if is compensated
 	 */
 	public boolean isCompensated() {
 		return compensated;
@@ -109,6 +122,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Sets the value of the compensated property.
 	 * 
+	 * @param value
+	 *        the new compensated
 	 */
 	public void setCompensated(boolean value) {
 		this.compensated = value;
@@ -134,13 +149,38 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	public void setId(Long value) {
 		this.id = value;
 	}
+
+	/**
+	 * Instantiates a new compensation date span.
+	 */
 	public CompensationDateSpan() {}
-	public CompensationDateSpan(Long id, Date start, Date end, boolean compensated) {
+
+	/**
+	 * Instantiates a new compensation date span.
+	 * 
+	 * @param id
+	 *        the id
+	 * @param start
+	 *        the start
+	 * @param end
+	 *        the end
+	 * @param compensated
+	 *        the compensated
+	 * @throws IllegalArgumentException
+	 *         the illegal argument exception
+	 * @throws NullPointerException
+	 *         the null pointer exception
+	 */
+	public CompensationDateSpan(Long id, Date start, Date end, boolean compensated)
+			throws IllegalArgumentException, NullPointerException {
 		super();
 		this.id = id;
 		this.start = start;
 		this.end = end;
 		this.compensated = compensated;
+
+		if (this.start.compareTo(this.end) > 0)
+			throw new IllegalArgumentException(start + " after " + end);
 	}
 
 }

@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for contactInfo complex type.
@@ -43,14 +44,22 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "contactInfo",
 		propOrder = { "emailAddresses", "phoneNumbers" }) public class ContactInfo {
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override public String toString() {
 		return String.format(
 				"ContactInfo [id=%s, emailAddresses=%s, phoneNumbers=%s]", id,
 				emailAddresses, phoneNumbers);
 	}
 
+	/** The email addresses. */
 	protected List<String> emailAddresses = new ArrayList<String>();
+	
+	/** The phone numbers. */
 	protected List<String> phoneNumbers = new ArrayList<String>();
+	
+	/** The id. */
 	@XmlAttribute protected Long id;
 
 	/**
@@ -72,8 +81,8 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
+	 *
+	 * @return the email addresses
 	 */
 	public List<String> getEmailAddresses() {
 		if (emailAddresses == null) {
@@ -101,8 +110,8 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
+	 *
+	 * @return the phone numbers
 	 */
 	public List<String> getPhoneNumbers() {
 		if (phoneNumbers == null) {
@@ -131,7 +140,19 @@ import javax.xml.bind.annotation.XmlType;
 	public void setId(Long value) {
 		this.id = value;
 	}
+	
+	/**
+	 * Instantiates a new contact info.
+	 */
 	public ContactInfo() {}
+	
+	/**
+	 * Instantiates a new contact info.
+	 *
+	 * @param id the id
+	 * @param emailAddresses the email addresses
+	 * @param phoneNumbers the phone numbers
+	 */
 	public ContactInfo(Long id, List<String> emailAddresses,
 			List<String> phoneNumbers) {
 		super();

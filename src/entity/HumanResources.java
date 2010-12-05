@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for humanResources complex type.
@@ -41,6 +42,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "humanResources",
 		propOrder = { "employee" }) public class HumanResources {
 
+	/** The employee. */
 	@XmlElement(name = "Employee") protected List<Employee> employee;
 
 	/**
@@ -62,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link Employee }
-	 * 
-	 * 
+	 *
+	 * @return the employee
 	 */
 	public List<Employee> getEmployee() {
 		if (employee == null) {
@@ -71,12 +73,25 @@ import javax.xml.bind.annotation.XmlType;
 		}
 		return this.employee;
 	}
+	
+	/**
+	 * Instantiates a new human resources.
+	 */
 	public HumanResources() {}
+	
+	/**
+	 * Instantiates a new human resources.
+	 *
+	 * @param employee the employee
+	 */
 	public HumanResources(List<Employee> employee) {
 		super();
 		this.employee = employee;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override public String toString() {
 		return String.format("HumanResources [employee=%s]", employee);
 	}

@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
@@ -31,95 +32,116 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    /** The Constant _HumanResources_QNAME. */
     private final static QName _HumanResources_QNAME = new QName("", "humanResources");
+    
+    /** The Constant _Person_QNAME. */
     private final static QName _Person_QNAME = new QName("", "person");
+    
+    /** The Constant _Raport_QNAME. */
     private final static QName _Raport_QNAME = new QName("", "raport");
+    
+    /** The Constant _CompensationDateSpan_QNAME. */
     private final static QName _CompensationDateSpan_QNAME = new QName("", "compensationDateSpan");
+    
+    /** The Constant _Data_QNAME. */
     private final static QName _Data_QNAME = new QName("", "data");
+    
+    /** The Constant _Employee_QNAME. */
     private final static QName _Employee_QNAME = new QName("", "employee");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: entity
-     * 
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: entity.
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link Employee }
-     * 
+     * Create an instance of {@link Employee }.
+     *
+     * @return the employee
      */
     public Employee createEmployee() {
         return new Employee();
     }
 
     /**
-     * Create an instance of {@link Data }
-     * 
+     * Create an instance of {@link Data }.
+     *
+     * @return the data
      */
     public Data createData() {
         return new Data();
     }
 
     /**
-     * Create an instance of {@link Raport }
-     * 
+     * Create an instance of {@link Raport }.
+     *
+     * @return the raport
      */
     public Raport createRaport() {
         return new Raport();
     }
 
     /**
-     * Create an instance of {@link CompensationDateSpan }
-     * 
+     * Create an instance of {@link CompensationDateSpan }.
+     *
+     * @return the compensation date span
      */
     public CompensationDateSpan createCompensationDateSpan() {
         return new CompensationDateSpan();
     }
 
     /**
-     * Create an instance of {@link ContactInfo }
-     * 
+     * Create an instance of {@link ContactInfo }.
+     *
+     * @return the contact info
      */
     public ContactInfo createContactInfo() {
         return new ContactInfo();
     }
 
     /**
-     * Create an instance of {@link StringToDoubleMapAdapter }
-     * 
+     * Create an instance of {@link StringToDoubleMapAdapter }.
+     *
+     * @return the string to double map adapter
      */
     public StringToDoubleMapAdapter createStringToDoubleMapAdapter() {
         return new StringToDoubleMapAdapter();
     }
 
     /**
-     * Create an instance of {@link HumanResources }
-     * 
+     * Create an instance of {@link HumanResources }.
+     *
+     * @return the human resources
      */
     public HumanResources createHumanResources() {
         return new HumanResources();
     }
 
     /**
-     * Create an instance of {@link Person }
-     * 
+     * Create an instance of {@link Person }.
+     *
+     * @return the person
      */
     public Person createPerson() {
         return new Person();
     }
 
     /**
-     * Create an instance of {@link MapTypeEntry }
-     * 
+     * Create an instance of {@link MapTypeEntry }.
+     *
+     * @return the map type entry
      */
     public MapTypeEntry createMapTypeEntry() {
         return new MapTypeEntry();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HumanResources }{@code >}}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link HumanResources }{@code >}}.
+     *
+     * @param value the value
+     * @return the JAXB element< human resources>
      */
     @XmlElementDecl(namespace = "", name = "humanResources")
     public JAXBElement<HumanResources> createHumanResources(HumanResources value) {
@@ -127,8 +149,10 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Person }{@code >}}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link Person }{@code >}}.
+     *
+     * @param value the value
+     * @return the JAXB element< person>
      */
     @XmlElementDecl(namespace = "", name = "person")
     public JAXBElement<Person> createPerson(Person value) {
@@ -136,8 +160,10 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Raport }{@code >}}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link Raport }{@code >}}.
+     *
+     * @param value the value
+     * @return the JAXB element< raport>
      */
     @XmlElementDecl(namespace = "", name = "raport")
     public JAXBElement<Raport> createRaport(Raport value) {
@@ -145,8 +171,10 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CompensationDateSpan }{@code >}}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link CompensationDateSpan }{@code >}}.
+     *
+     * @param value the value
+     * @return the JAXB element< compensation date span>
      */
     @XmlElementDecl(namespace = "", name = "compensationDateSpan")
     public JAXBElement<CompensationDateSpan> createCompensationDateSpan(CompensationDateSpan value) {
@@ -154,8 +182,10 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Data }{@code >}}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link Data }{@code >}}.
+     *
+     * @param value the value
+     * @return the JAXB element< data>
      */
     @XmlElementDecl(namespace = "", name = "data")
     public JAXBElement<Data> createData(Data value) {
@@ -163,8 +193,10 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Employee }{@code >}}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link Employee }{@code >}}.
+     *
+     * @param value the value
+     * @return the JAXB element< employee>
      */
     @XmlElementDecl(namespace = "", name = "employee")
     public JAXBElement<Employee> createEmployee(Employee value) {

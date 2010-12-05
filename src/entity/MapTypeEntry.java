@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for mapTypeEntry complex type.
@@ -38,16 +39,23 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "mapTypeEntry",
 		propOrder = { "value" }) public class MapTypeEntry {
 
+	/** The value. */
 	@XmlValue protected double value;
+	
+	/** The key. */
 	@XmlAttribute protected String key;
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override public String toString() {
 		return String.format("MapTypeEntry [value=%s, key=%s]", value, key);
 	}
 
 	/**
 	 * Gets the value of the value property.
-	 * 
+	 *
+	 * @return the value
 	 */
 	public double getValue() {
 		return value;
@@ -55,7 +63,8 @@ import javax.xml.bind.annotation.XmlValue;
 
 	/**
 	 * Sets the value of the value property.
-	 * 
+	 *
+	 * @param value the new value
 	 */
 	public void setValue(double value) {
 		this.value = value;
