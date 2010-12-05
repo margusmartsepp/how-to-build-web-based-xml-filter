@@ -41,7 +41,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * &lt;/complexType>
  * </pre>
  * 
- * 
+ * @author Margus Martsepp
+ * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "compensationDateSpan",
 		propOrder = { "start", "end", "compensated" }) public class CompensationDateSpan
@@ -81,8 +82,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the start property.
 	 * 
-	 * @return possible object is {@link Date }
 	 * 
+	 * 
+	 * @return possible object is {@link Date }
 	 */
 	public Date getStart() {
 		return start;
@@ -102,8 +104,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the end property.
 	 * 
-	 * @return possible object is {@link XMLGregorianCalendar }
 	 * 
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
 	 */
 	public Date getEnd() {
 		return end;
@@ -122,6 +125,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 	/**
 	 * Gets the value of the compensated property.
+	 * 
 	 * 
 	 * @return true, if is compensated
 	 */
@@ -142,8 +146,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the id property.
 	 * 
-	 * @return possible object is {@link Long }
 	 * 
+	 * 
+	 * @return possible object is {@link Long }
 	 */
 	public Long getId() {
 		return id;
@@ -176,10 +181,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 *        the end
 	 * @param compensated
 	 *        the compensated
+	 * 
+	 * 
 	 * @throws IllegalArgumentException
-	 *         the illegal argument exception if start is after end
-	 * @throws NullPointerException
-	 *         the null pointer exception if start or end is null
+	 *         the illegal argument exception if start is after end * @throws
+	 *         NullPointerException the null pointer exception if start or end is
+	 *         null * @throws NullPointerException
 	 */
 	public CompensationDateSpan(Long id, Date start, Date end, boolean compensated)
 			throws IllegalArgumentException, NullPointerException {

@@ -12,10 +12,14 @@ package entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.Map.Entry;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import com.google.appengine.repackaged.com.google.common.base.Preconditions;
+import com.google.appengine.repackaged.com.google.common.collect.ImmutableMap;
+import com.google.appengine.repackaged.com.google.common.collect.Maps;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -40,10 +44,11 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/complexType>
  * </pre>
  * 
- * 
+ * @author Margus Martsepp
+ * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "raport", propOrder = {
-		"depWageSum", "grandTotal" }) public class Raport implements Serializable {
+		"depWageSum", "grandTotal" }) public class Report implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to
@@ -55,25 +60,26 @@ import javax.xml.bind.annotation.XmlType;
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * Instantiates a new raport.
+	 * Instantiates a new report.
 	 */
-	public Raport() {}
+	public Report() {}
 
 	/**
-	 * Instantiates a new raport.
+	 * Instantiates a new report.
 	 * 
 	 * @param depWageSum
 	 *        the dep wage sum
-	 * @param grandTotal
-	 *        the grand total
 	 * @param id
 	 *        the id
-	 */
-	public Raport(HashMap<String, Double> depWageSum, double grandTotal, Long id) {
+	 * 
+	
+	 * @throws NullPointerException
+	 *         the null pointer exception */
+	public Report(final HashMap<String, Double> depWageSum, final Long id)
+			throws NullPointerException {
 		super();
-		this.depWageSum = depWageSum;
-		this.grandTotal = grandTotal;
-		this.id = id;
+		this.id = Preconditions.checkNotNull(id);
+		this.setDepWageSum(depWageSum);
 	}
 
 	/*
@@ -81,18 +87,18 @@ import javax.xml.bind.annotation.XmlType;
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
-		return String.format("Raport [id=%s, depWageSum=%s, grandTotal=%s]", id,
+		return String.format("Report [id=%s, depWageSum=%s, grandTotal=%s]", id,
 				depWageSum, grandTotal);
 	}
 
 	/** The dep wage sum. */
-	protected HashMap<String, Double> depWageSum;
+	protected HashMap<String, Double> depWageSum = Maps.newHashMap();
 
 	/** The bd. */
 	transient private BigDecimal bd = BigDecimal.ZERO;
 
 	/** The grand total. */
-	protected double grandTotal;
+	protected double grandTotal = 0d;
 
 	/** The id. */
 	@XmlAttribute protected Long id;
@@ -100,49 +106,31 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the depWageSum property.
 	 * 
-	 * @return possible object is {@link HashMap<String, Double> }
 	 * 
-	 */
-	public HashMap<String, Double> getDepWageSum() {
-		return depWageSum;
-	}
-
-	/**
-	 * Sets the value of the depWageSum property.
 	 * 
-	 * @param value
-	 *        allowed object is {@link HashMap<String, Double> }
-	 * 
-	 */
-	public void setDepWageSum(HashMap<String, Double> value) {
-		this.depWageSum = value;
+	
+	 * @return possible object is {@link ImmutableMap<String, Double> } */
+	public ImmutableMap<String, Double> getDepWageSum() {
+		return ImmutableMap.copyOf(depWageSum);
 	}
 
 	/**
 	 * Gets the value of the grandTotal property.
 	 * 
-	 * @return the grand total
-	 */
+	 * 
+	
+	 * @return the grand total */
 	public double getGrandTotal() {
 		return grandTotal;
 	}
 
 	/**
-	 * Sets the value of the grandTotal property.
-	 * 
-	 * @param value
-	 *        the new grand total
-	 */
-	public void setGrandTotal(double value) {
-		this.grandTotal = value;
-	}
-
-	/**
 	 * Gets the value of the id property.
 	 * 
-	 * @return possible object is {@link Long }
 	 * 
-	 */
+	 * 
+	
+	 * @return possible object is {@link Long } */
 	public Long getId() {
 		return id;
 	}
@@ -155,8 +143,37 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 */
 	public void setId(Long value) {
+		Preconditions.checkNotNull(value);
 		this.id = value;
 	}
+
+	/**
+	 * Sets the dep wage sum. This will also update current {@link #grandTotal}.
+	 * Can be referred to as reset and bulk push.
+	 * 
+	 * @param depWageSum
+	 *        the dep wage sum
+	 * 
+	
+	 * @throws NullPointerException
+	 *         the null pointer exception */
+	public synchronized void setDepWageSum(
+			final HashMap<String, Double> depWageSum) throws NullPointerException {
+		Preconditions.checkNotNull(depWageSum);
+		synchronized (this.depWageSum) {
+			this.depWageSum.clear();
+			this.grandTotal = 0;
+			this.bd = BigDecimal.ZERO;
+		}
+		for (Entry<String, Double> elem : depWageSum.entrySet()) {
+			try {
+				push(elem.getKey(), elem.getValue());
+			} catch (Exception e) {
+				System.err.println(elem + " was invalid.");
+			}
+		}
+	}
+
 	/**
 	 * Push.
 	 * 
@@ -164,12 +181,25 @@ import javax.xml.bind.annotation.XmlType;
 	 *        the department title
 	 * @param hourRate
 	 *        the hour rate
-	 */
-	public void push(String departmentTitle, Double hourRate) {
+	 * 
+	
+	
+	 * @throws NullPointerException
+	 *         the null pointer exception * @throws IllegalArgumentException
+	 *         the illegal argument exception */
+	public synchronized void push(
+			final String departmentTitle, final Double hourRate) throws NullPointerException,
+			IllegalArgumentException {
+		Preconditions.checkNotNull(departmentTitle);
+		Preconditions.checkNotNull(hourRate);
+		Preconditions.checkState(hourRate > 0);
+
 		bd = bd.add(BigDecimal.valueOf(hourRate));
 		grandTotal = bd.doubleValue();
-		if (this.depWageSum.containsKey(departmentTitle)) this.depWageSum.put(
-				departmentTitle, this.depWageSum.get(departmentTitle) + hourRate);
-		else this.depWageSum.put(departmentTitle, hourRate);
+		synchronized (this.depWageSum) {
+			if (this.depWageSum.containsKey(departmentTitle)) this.depWageSum.put(
+					departmentTitle, this.depWageSum.get(departmentTitle) + hourRate);
+			else this.depWageSum.put(departmentTitle, hourRate);
+		}
 	}
 }

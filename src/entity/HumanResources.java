@@ -9,6 +9,7 @@
 
 package entity;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import com.google.common.base.Predicate;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -38,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/complexType>
  * </pre>
  * 
- * 
+ * @author Margus Martsepp
+ * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "humanResources",
 		propOrder = { "employee" }) public class HumanResources implements
@@ -76,8 +79,9 @@ import javax.xml.bind.annotation.XmlType;
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link Employee }
 	 * 
-	 * @return the employee
-	 */
+	 * 
+	
+	 * @return the employee */
 	public List<Employee> getEmployee() {
 		if (employee == null) {
 			employee = new ArrayList<Employee>();
@@ -109,4 +113,26 @@ import javax.xml.bind.annotation.XmlType;
 		return String.format("HumanResources [employee=%s]", employee);
 	}
 
+	/**
+	 * Filter.
+	 * 
+	 * @param predicate
+	 *        the predicate
+	
+	
+	 * @return the human resources * @throws NullPointerException
+	 *         the null pointer exception */
+	public HumanResources filter(Predicate<Employee> predicate) throws NullPointerException {
+		final ArrayList<Employee> result = new ArrayList<Employee>();
+		synchronized (checkNotNull(employee)) {
+			for (Employee element : employee) {
+				if (element != null) if (predicate.apply(element)) result.add(element);
+			}
+			employee.clear();
+			employee.addAll(result);
+		}
+		result.clear();
+
+		return this;
+	}
 }

@@ -41,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/complexType>
  * </pre>
  * 
- * 
+ * @author Margus Martsepp
+ * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "employee", propOrder = {
 		"person", "data", "modifiedDate" }) public class Employee implements
@@ -81,9 +82,9 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the person property.
 	 * 
-	 * @return possible object is {@link Person }
+	
 	 * 
-	 */
+	 * @return possible object is {@link Person } */
 	public Person getPerson() {
 		return person;
 	}
@@ -102,9 +103,9 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the data property.
 	 * 
-	 * @return possible object is {@link Data }
+	
 	 * 
-	 */
+	 * @return possible object is {@link Data } */
 	public Data getData() {
 		return data;
 	}
@@ -123,9 +124,9 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the modifiedDate property.
 	 * 
-	 * @return possible object is {@link Date }
+	
 	 * 
-	 */
+	 * @return possible object is {@link Date } */
 	public Date getModifiedDate() {
 		return modifiedDate;
 	}
@@ -144,9 +145,9 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the id property.
 	 * 
-	 * @return possible object is {@link Long }
+	
 	 * 
-	 */
+	 * @return possible object is {@link Long } */
 	public Long getId() {
 		return id;
 	}

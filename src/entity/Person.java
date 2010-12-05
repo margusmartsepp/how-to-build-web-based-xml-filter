@@ -10,12 +10,12 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -42,7 +42,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * &lt;/complexType>
  * </pre>
  * 
- * 
+ * @author Margus Martsepp
+ * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "person", propOrder = {
 		"name", "isMale", "birthday", "iCi" }) public class Person implements
@@ -64,7 +65,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	@XmlElement(required = true) protected String name;
 
 	/** The birthday. */
-	@XmlElement(required = true) protected XMLGregorianCalendar birthday;
+	@XmlElement(required = true) protected Date birthday;
 
 	/** The i ci. */
 	protected ContactInfo iCi;
@@ -91,8 +92,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * @param iCi
 	 *        the i ci
 	 */
-	public Person(Long id, boolean isMale, String name,
-			XMLGregorianCalendar birthday, ContactInfo iCi) {
+	public Person(Long id, boolean isMale, String name, Date birthday,
+			ContactInfo iCi) {
 		super();
 		this.id = id;
 		this.isMale = isMale;
@@ -114,8 +115,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the isMale property.
 	 * 
-	 * @return true, if is checks if is male
-	 */
+	 * 
+	
+	 * @return true, if is checks if is male */
 	public boolean isIsMale() {
 		return isMale;
 	}
@@ -133,9 +135,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the name property.
 	 * 
-	 * @return possible object is {@link String }
 	 * 
-	 */
+	 * 
+	
+	 * @return possible object is {@link String } */
 	public String getName() {
 		return name;
 	}
@@ -154,10 +157,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the birthday property.
 	 * 
-	 * @return possible object is {@link XMLGregorianCalendar }
 	 * 
-	 */
-	public XMLGregorianCalendar getBirthday() {
+	 * 
+	
+	 * @return possible object is {@link Date } */
+	public Date getBirthday() {
 		return birthday;
 	}
 
@@ -165,19 +169,20 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * Sets the value of the birthday property.
 	 * 
 	 * @param value
-	 *        allowed object is {@link XMLGregorianCalendar }
+	 *        allowed object is {@link Date }
 	 * 
 	 */
-	public void setBirthday(XMLGregorianCalendar value) {
+	public void setBirthday(Date value) {
 		this.birthday = value;
 	}
 
 	/**
 	 * Gets the value of the iCi property.
 	 * 
-	 * @return possible object is {@link ContactInfo }
 	 * 
-	 */
+	 * 
+	
+	 * @return possible object is {@link ContactInfo } */
 	public ContactInfo getICi() {
 		return iCi;
 	}
@@ -196,9 +201,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the id property.
 	 * 
-	 * @return possible object is {@link Long }
 	 * 
-	 */
+	 * 
+	
+	 * @return possible object is {@link Long } */
 	public Long getId() {
 		return id;
 	}

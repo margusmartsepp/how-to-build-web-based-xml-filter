@@ -34,7 +34,8 @@ import javax.xml.bind.annotation.XmlValue;
  * &lt;/complexType>
  * </pre>
  * 
- * 
+ * @author Margus Martsepp
+ * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "mapTypeEntry",
 		propOrder = { "value" }) public class MapTypeEntry {
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlValue;
 	/**
 	 * Gets the value of the value property.
 	 * 
-	 * @return the value
-	 */
+	
+	 * @return the value */
 	public double getValue() {
 		return value;
 	}
@@ -75,9 +76,9 @@ import javax.xml.bind.annotation.XmlValue;
 	/**
 	 * Gets the value of the key property.
 	 * 
-	 * @return possible object is {@link String }
+	
 	 * 
-	 */
+	 * @return possible object is {@link String } */
 	public String getKey() {
 		return key;
 	}
