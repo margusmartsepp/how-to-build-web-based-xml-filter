@@ -9,6 +9,7 @@
 
 package entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -42,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "raport", propOrder = {
-		"depWageSum", "grandTotal" }) public class Raport {
+		"depWageSum", "grandTotal" }) public class Raport implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to

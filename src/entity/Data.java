@@ -9,6 +9,7 @@
 
 package entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -53,7 +54,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "data", propOrder = {
 		"creditCard", "occupationTitle", "departmentTitle", "hireDate", "hourRate",
-		"vacation", "holiday", "std", "ltd" }) public class Data {
+		"vacation", "holiday", "std", "ltd" }) public class Data implements
+		Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to

@@ -9,6 +9,7 @@
 
 package entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +44,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "employee", propOrder = {
-		"person", "data", "modifiedDate" }) public class Employee {
+		"person", "data", "modifiedDate" }) public class Employee implements
+		Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to

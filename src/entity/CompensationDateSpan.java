@@ -8,6 +8,7 @@
 //
 
 package entity;
+import java.io.Serializable;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +44,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "compensationDateSpan",
-		propOrder = { "start", "end", "compensated" }) public class CompensationDateSpan {
+		propOrder = { "start", "end", "compensated" }) public class CompensationDateSpan
+		implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to

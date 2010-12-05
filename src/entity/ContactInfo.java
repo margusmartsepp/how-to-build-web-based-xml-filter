@@ -9,6 +9,7 @@
 
 package entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -42,7 +43,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "contactInfo",
-		propOrder = { "emailAddresses", "phoneNumbers" }) public class ContactInfo {
+		propOrder = { "emailAddresses", "phoneNumbers" }) public class ContactInfo
+		implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to
