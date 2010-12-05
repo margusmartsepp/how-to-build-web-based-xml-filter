@@ -43,18 +43,30 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "raport", propOrder = {
 		"depWageSum", "grandTotal" }) public class Raport {
-	
+	/**
+	 * <p>
+	 * This is stable compatibility validator. This is used among other things to
+	 * determine if a deserialized file is compatible with this class.
+	 * <p>
+	 * For more information about why this class is useful, check <a href=
+	 * "http://mindprod.com/jgloss/serialization.html#SERIALVERSIONUID" >this</a>
+	 * out.
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * Instantiates a new raport.
 	 */
 	public Raport() {}
-	
+
 	/**
 	 * Instantiates a new raport.
-	 *
-	 * @param depWageSum the dep wage sum
-	 * @param grandTotal the grand total
-	 * @param id the id
+	 * 
+	 * @param depWageSum
+	 *        the dep wage sum
+	 * @param grandTotal
+	 *        the grand total
+	 * @param id
+	 *        the id
 	 */
 	public Raport(HashMap<String, Double> depWageSum, double grandTotal, Long id) {
 		super();
@@ -63,7 +75,8 @@ import javax.xml.bind.annotation.XmlType;
 		this.id = id;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
@@ -73,13 +86,13 @@ import javax.xml.bind.annotation.XmlType;
 
 	/** The dep wage sum. */
 	protected HashMap<String, Double> depWageSum;
-	
+
 	/** The bd. */
 	transient private BigDecimal bd = BigDecimal.ZERO;
-	
+
 	/** The grand total. */
 	protected double grandTotal;
-	
+
 	/** The id. */
 	@XmlAttribute protected Long id;
 
@@ -106,7 +119,7 @@ import javax.xml.bind.annotation.XmlType;
 
 	/**
 	 * Gets the value of the grandTotal property.
-	 *
+	 * 
 	 * @return the grand total
 	 */
 	public double getGrandTotal() {
@@ -115,8 +128,9 @@ import javax.xml.bind.annotation.XmlType;
 
 	/**
 	 * Sets the value of the grandTotal property.
-	 *
-	 * @param value the new grand total
+	 * 
+	 * @param value
+	 *        the new grand total
 	 */
 	public void setGrandTotal(double value) {
 		this.grandTotal = value;

@@ -8,7 +8,6 @@
 //
 
 package entity;
-
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -45,7 +44,16 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "compensationDateSpan",
 		propOrder = { "start", "end", "compensated" }) public class CompensationDateSpan {
-
+	/**
+	 * <p>
+	 * This is stable compatibility validator. This is used among other things to
+	 * determine if a deserialized file is compatible with this class.
+	 * <p>
+	 * For more information about why this class is useful, check <a href=
+	 * "http://mindprod.com/jgloss/serialization.html#SERIALVERSIONUID" >this</a>
+	 * out.
+	 */
+	private static final long serialVersionUID = 1L;
 	/*
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -167,9 +175,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * @param compensated
 	 *        the compensated
 	 * @throws IllegalArgumentException
-	 *         the illegal argument exception
+	 *         the illegal argument exception if start is after end
 	 * @throws NullPointerException
-	 *         the null pointer exception
+	 *         the null pointer exception if start or end is null
 	 */
 	public CompensationDateSpan(Long id, Date start, Date end, boolean compensated)
 			throws IllegalArgumentException, NullPointerException {

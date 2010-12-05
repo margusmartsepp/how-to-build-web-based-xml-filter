@@ -54,55 +54,74 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "data", propOrder = {
 		"creditCard", "occupationTitle", "departmentTitle", "hireDate", "hourRate",
 		"vacation", "holiday", "std", "ltd" }) public class Data {
-
+	/**
+	 * <p>
+	 * This is stable compatibility validator. This is used among other things to
+	 * determine if a deserialized file is compatible with this class.
+	 * <p>
+	 * For more information about why this class is useful, check <a href=
+	 * "http://mindprod.com/jgloss/serialization.html#SERIALVERSIONUID" >this</a>
+	 * out.
+	 */
+	private static final long serialVersionUID = 1L;
 	/** The credit card. */
 	@XmlElement(required = true) protected String creditCard;
-	
+
 	/** The occupation title. */
 	@XmlElement(required = true) protected String occupationTitle;
-	
+
 	/** The department title. */
 	@XmlElement(required = true) protected String departmentTitle;
-	
+
 	/** The hire date. */
 	@XmlElement(required = true) protected Date hireDate;
-	
+
 	/** The hour rate. */
 	protected double hourRate;
-	
+
 	/** The vacation. */
 	protected List<CompensationDateSpan> vacation;
-	
+
 	/** The holiday. */
 	protected List<CompensationDateSpan> holiday;
-	
+
 	/** The std. */
 	protected List<CompensationDateSpan> std;
-	
+
 	/** The ltd. */
 	protected List<CompensationDateSpan> ltd;
-	
+
 	/** The id. */
 	@XmlAttribute protected Long id;
-	
+
 	/**
 	 * Instantiates a new data.
 	 */
 	public Data() {};
-	
+
 	/**
 	 * Instantiates a new data.
-	 *
-	 * @param id the id
-	 * @param creditCard the credit card
-	 * @param occupationTitle the occupation title
-	 * @param departmentTitle the department title
-	 * @param hireDate the hire date
-	 * @param hourRate the hour rate
-	 * @param vacation the vacation
-	 * @param holiday the holiday
-	 * @param std the std
-	 * @param ltd the ltd
+	 * 
+	 * @param id
+	 *        the id
+	 * @param creditCard
+	 *        the credit card
+	 * @param occupationTitle
+	 *        the occupation title
+	 * @param departmentTitle
+	 *        the department title
+	 * @param hireDate
+	 *        the hire date
+	 * @param hourRate
+	 *        the hour rate
+	 * @param vacation
+	 *        the vacation
+	 * @param holiday
+	 *        the holiday
+	 * @param std
+	 *        the std
+	 * @param ltd
+	 *        the ltd
 	 */
 	public Data(Long id, String creditCard, String occupationTitle,
 			String departmentTitle, Date hireDate, double hourRate,
@@ -194,7 +213,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 		return hireDate;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
@@ -217,7 +237,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 	/**
 	 * Gets the value of the hourRate property.
-	 *
+	 * 
 	 * @return the hour rate
 	 */
 	public double getHourRate() {
@@ -226,8 +246,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 	/**
 	 * Sets the value of the hourRate property.
-	 *
-	 * @param value the new hour rate
+	 * 
+	 * @param value
+	 *        the new hour rate
 	 */
 	public void setHourRate(double value) {
 		this.hourRate = value;
@@ -252,9 +273,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
-	 *
-	 * @return the vacation
-	 * {@link CompensationDateSpan }
+	 * 
+	 * @return the vacation {@link CompensationDateSpan }
 	 */
 	public List<CompensationDateSpan> getVacation() {
 		if (vacation == null) {
@@ -282,9 +302,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
-	 *
-	 * @return the holiday
-	 * {@link CompensationDateSpan }
+	 * 
+	 * @return the holiday {@link CompensationDateSpan }
 	 */
 	public List<CompensationDateSpan> getHoliday() {
 		if (holiday == null) {
@@ -312,9 +331,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
-	 *
-	 * @return the std
-	 * {@link CompensationDateSpan }
+	 * 
+	 * @return the std {@link CompensationDateSpan }
 	 */
 	public List<CompensationDateSpan> getStd() {
 		if (std == null) {
@@ -342,9 +360,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
-	 *
-	 * @return the ltd
-	 * {@link CompensationDateSpan }
+	 * 
+	 * @return the ltd {@link CompensationDateSpan }
 	 */
 	public List<CompensationDateSpan> getLtd() {
 		if (ltd == null) {

@@ -43,8 +43,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "contactInfo",
 		propOrder = { "emailAddresses", "phoneNumbers" }) public class ContactInfo {
-
-	/* (non-Javadoc)
+	/**
+	 * <p>
+	 * This is stable compatibility validator. This is used among other things to
+	 * determine if a deserialized file is compatible with this class.
+	 * <p>
+	 * For more information about why this class is useful, check <a href=
+	 * "http://mindprod.com/jgloss/serialization.html#SERIALVERSIONUID" >this</a>
+	 * out.
+	 */
+	private static final long serialVersionUID = 1L;
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
@@ -55,10 +65,10 @@ import javax.xml.bind.annotation.XmlType;
 
 	/** The email addresses. */
 	protected List<String> emailAddresses = new ArrayList<String>();
-	
+
 	/** The phone numbers. */
 	protected List<String> phoneNumbers = new ArrayList<String>();
-	
+
 	/** The id. */
 	@XmlAttribute protected Long id;
 
@@ -81,7 +91,7 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link String }
-	 *
+	 * 
 	 * @return the email addresses
 	 */
 	public List<String> getEmailAddresses() {
@@ -110,7 +120,7 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link String }
-	 *
+	 * 
 	 * @return the phone numbers
 	 */
 	public List<String> getPhoneNumbers() {
@@ -140,18 +150,21 @@ import javax.xml.bind.annotation.XmlType;
 	public void setId(Long value) {
 		this.id = value;
 	}
-	
+
 	/**
 	 * Instantiates a new contact info.
 	 */
 	public ContactInfo() {}
-	
+
 	/**
 	 * Instantiates a new contact info.
-	 *
-	 * @param id the id
-	 * @param emailAddresses the email addresses
-	 * @param phoneNumbers the phone numbers
+	 * 
+	 * @param id
+	 *        the id
+	 * @param emailAddresses
+	 *        the email addresses
+	 * @param phoneNumbers
+	 *        the phone numbers
 	 */
 	public ContactInfo(Long id, List<String> emailAddresses,
 			List<String> phoneNumbers) {

@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for employee complex type.
@@ -43,16 +44,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "employee", propOrder = {
 		"person", "data", "modifiedDate" }) public class Employee {
-
+	/**
+	 * <p>
+	 * This is stable compatibility validator. This is used among other things to
+	 * determine if a deserialized file is compatible with this class.
+	 * <p>
+	 * For more information about why this class is useful, check <a href=
+	 * "http://mindprod.com/jgloss/serialization.html#SERIALVERSIONUID" >this</a>
+	 * out.
+	 */
+	private static final long serialVersionUID = 1L;
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override public String toString() {
 		return String.format(
 				"Employee [id=%s, person=%s, data=%s, modifiedDate=%s]", id, person,
 				data, modifiedDate);
 	}
 
+	/** The person. */
 	@XmlElement(required = true) protected Person person;
+
+	/** The data. */
 	@XmlElement(required = true) protected Data data;
+
+	/** The modified date. */
 	@XmlElement(required = true) protected Date modifiedDate;
+
+	/** The id. */
 	@XmlAttribute protected Long id;
 
 	/**
@@ -138,7 +159,24 @@ import javax.xml.bind.annotation.XmlType;
 	public void setId(Long value) {
 		this.id = value;
 	}
+
+	/**
+	 * Instantiates a new employee.
+	 */
 	public Employee() {}
+
+	/**
+	 * Instantiates a new employee.
+	 * 
+	 * @param id
+	 *        the id
+	 * @param person
+	 *        the person
+	 * @param data
+	 *        the data
+	 * @param modifiedDate
+	 *        the modified date
+	 */
 	public Employee(Long id, Person person, Data data, Date modifiedDate) {
 		super();
 		this.id = id;

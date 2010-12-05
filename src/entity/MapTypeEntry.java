@@ -41,11 +41,12 @@ import javax.xml.bind.annotation.XmlValue;
 
 	/** The value. */
 	@XmlValue protected double value;
-	
+
 	/** The key. */
 	@XmlAttribute protected String key;
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
@@ -54,7 +55,7 @@ import javax.xml.bind.annotation.XmlValue;
 
 	/**
 	 * Gets the value of the value property.
-	 *
+	 * 
 	 * @return the value
 	 */
 	public double getValue() {
@@ -63,8 +64,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 	/**
 	 * Sets the value of the value property.
-	 *
-	 * @param value the new value
+	 * 
+	 * @param value
+	 *        the new value
 	 */
 	public void setValue(double value) {
 		this.value = value;

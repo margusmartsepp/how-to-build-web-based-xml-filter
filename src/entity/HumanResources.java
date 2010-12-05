@@ -41,7 +41,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "humanResources",
 		propOrder = { "employee" }) public class HumanResources {
-
+	/**
+	 * <p>
+	 * This is stable compatibility validator. This is used among other things to
+	 * determine if a deserialized file is compatible with this class.
+	 * <p>
+	 * For more information about why this class is useful, check <a href=
+	 * "http://mindprod.com/jgloss/serialization.html#SERIALVERSIONUID" >this</a>
+	 * out.
+	 */
+	private static final long serialVersionUID = 1L;
 	/** The employee. */
 	@XmlElement(name = "Employee") protected List<Employee> employee;
 
@@ -64,7 +73,7 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link Employee }
-	 *
+	 * 
 	 * @return the employee
 	 */
 	public List<Employee> getEmployee() {
@@ -73,23 +82,25 @@ import javax.xml.bind.annotation.XmlType;
 		}
 		return this.employee;
 	}
-	
+
 	/**
 	 * Instantiates a new human resources.
 	 */
 	public HumanResources() {}
-	
+
 	/**
 	 * Instantiates a new human resources.
-	 *
-	 * @param employee the employee
+	 * 
+	 * @param employee
+	 *        the employee
 	 */
 	public HumanResources(List<Employee> employee) {
 		super();
 		this.employee = employee;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {

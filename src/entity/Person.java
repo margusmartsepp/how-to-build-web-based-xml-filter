@@ -45,35 +45,49 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "person", propOrder = {
 		"name", "isMale", "birthday", "iCi" }) public class Person {
-
+	/**
+	 * <p>
+	 * This is stable compatibility validator. This is used among other things to
+	 * determine if a deserialized file is compatible with this class.
+	 * <p>
+	 * For more information about why this class is useful, check <a href=
+	 * "http://mindprod.com/jgloss/serialization.html#SERIALVERSIONUID" >this</a>
+	 * out.
+	 */
+	private static final long serialVersionUID = 1L;
 	/** The is male. */
 	protected boolean isMale;
-	
+
 	/** The name. */
 	@XmlElement(required = true) protected String name;
-	
+
 	/** The birthday. */
 	@XmlElement(required = true) protected XMLGregorianCalendar birthday;
-	
+
 	/** The i ci. */
 	protected ContactInfo iCi;
-	
+
 	/** The id. */
 	@XmlAttribute protected Long id;
-	
+
 	/**
 	 * Instantiates a new person.
 	 */
 	public Person() {}
-	
+
 	/**
 	 * Instantiates a new person.
-	 *
-	 * @param id the id
-	 * @param isMale the is male
-	 * @param name the name
-	 * @param birthday the birthday
-	 * @param iCi the i ci
+	 * 
+	 * @param id
+	 *        the id
+	 * @param isMale
+	 *        the is male
+	 * @param name
+	 *        the name
+	 * @param birthday
+	 *        the birthday
+	 * @param iCi
+	 *        the i ci
 	 */
 	public Person(Long id, boolean isMale, String name,
 			XMLGregorianCalendar birthday, ContactInfo iCi) {
@@ -85,7 +99,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 		this.iCi = iCi;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
@@ -96,7 +111,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 	/**
 	 * Gets the value of the isMale property.
-	 *
+	 * 
 	 * @return true, if is checks if is male
 	 */
 	public boolean isIsMale() {
@@ -105,8 +120,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 	/**
 	 * Sets the value of the isMale property.
-	 *
-	 * @param value the new checks if is male
+	 * 
+	 * @param value
+	 *        the new checks if is male
 	 */
 	public void setIsMale(boolean value) {
 		this.isMale = value;
