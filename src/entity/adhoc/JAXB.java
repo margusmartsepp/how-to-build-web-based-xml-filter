@@ -21,6 +21,7 @@ import javax.xml.stream.XMLStreamWriter;
 import javax.xml.transform.Result;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.InputSource;
+import com.google.appengine.repackaged.com.google.common.base.Preconditions;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -123,8 +124,9 @@ public class JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(
 			Class<T> t, InputSource is) throws Exception {
-		checkNotNull(is);
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		Preconditions.checkNotNull(is);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(is);
 	}
@@ -144,8 +146,9 @@ public class JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(
 			Class<T> t, InputStream is) throws Exception {
-		checkNotNull(is);
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		Preconditions.checkNotNull(is);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(is);
 	}
@@ -164,8 +167,9 @@ public class JAXB
 	 * @return the t * @throws Exception the exception * @see JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(Class<T> t, Node soap) throws Exception {
-		checkNotNull(soap);
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		Preconditions.checkNotNull(soap);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(soap);
 	}
@@ -184,8 +188,9 @@ public class JAXB
 	 * @return the t * @throws Exception the exception * @see JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(Class<T> t, Reader r) throws Exception {
-		checkNotNull(r);
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		Preconditions.checkNotNull(r);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(r);
 	}
@@ -214,9 +219,10 @@ public class JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(
 			Class<T> t, String filename) throws Exception {
-		checkNotNull(filename);
+		Preconditions.checkNotNull(filename);
+		Preconditions.checkNotNull(t);
 		java.io.File f = checkNotNull(new java.io.File(filename));
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(f);
 	}
@@ -235,8 +241,9 @@ public class JAXB
 	 * @return the t * @throws Exception the exception * @see JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(Class<T> t, URL url) throws Exception {
-		checkNotNull(url);
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		Preconditions.checkNotNull(url);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(url);
 	}
@@ -256,8 +263,9 @@ public class JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(
 			Class<T> t, XMLEventReader reader) throws Exception {
-		checkNotNull(reader);
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		Preconditions.checkNotNull(reader);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(reader);
 	}
@@ -277,8 +285,9 @@ public class JAXB
 	 */
 	@SuppressWarnings("unchecked") public static <T> T read(
 			Class<T> t, XMLStreamReader reader) throws Exception {
-		checkNotNull(reader);
-		JAXBContext context = JAXBContext.newInstance(checkNotNull(t));
+		Preconditions.checkNotNull(reader);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = JAXBContext.newInstance(t);
 		Unmarshaller u = context.createUnmarshaller();
 		return (T) u.unmarshal(reader);
 	}
@@ -297,8 +306,9 @@ public class JAXB
 	 *         the exception * @see JAXB
 	 */
 	public static <T> void write(T t, ContentHandler ch) throws Exception {
-		checkNotNull(ch);
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		Preconditions.checkNotNull(ch);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, ch);
@@ -318,8 +328,9 @@ public class JAXB
 	 *         the exception * @see JAXB
 	 */
 	public static <T> void write(T t, Node node) throws Exception {
-		checkNotNull(node);
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		Preconditions.checkNotNull(node);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, node);
@@ -339,8 +350,9 @@ public class JAXB
 	 *         the exception * @see JAXB
 	 */
 	public static <T> void write(T t, OutputStream os) throws Exception {
-		checkNotNull(os);
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		Preconditions.checkNotNull(os);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, os);
@@ -360,8 +372,9 @@ public class JAXB
 	 *         the exception * @see JAXB
 	 */
 	public static <T> void write(T t, Result os) throws Exception {
-		checkNotNull(os);
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		Preconditions.checkNotNull(os);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, os);
@@ -381,9 +394,10 @@ public class JAXB
 	 *         the exception * @see JAXB
 	 */
 	public static <T> void write(T t, String filename) throws Exception {
-		checkNotNull(filename);
+		Preconditions.checkNotNull(filename);
+		Preconditions.checkNotNull(t);
 		java.io.File f = checkNotNull(new java.io.File(filename));
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, f);
@@ -403,8 +417,9 @@ public class JAXB
 	 *         the exception
 	 */
 	public static <T> void write(T t, Writer ws) throws Exception {
-		checkNotNull(ws);
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		Preconditions.checkNotNull(ws);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, ws);
@@ -424,8 +439,9 @@ public class JAXB
 	 *         the exception * @see JAXB
 	 */
 	public static <T> void write(T t, XMLEventWriter os) throws Exception {
-		checkNotNull(os);
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		Preconditions.checkNotNull(os);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, os);
@@ -442,8 +458,9 @@ public class JAXB
 	 *         the exception * @see JAXB * @see entity.HumanResources
 	 */
 	public static <T> void write(T t, XMLStreamWriter os) throws Exception {
-		checkNotNull(os);
-		JAXBContext context = checkNotNull(JAXBContext.newInstance(checkNotNull(t).getClass()));
+		Preconditions.checkNotNull(os);
+		Preconditions.checkNotNull(t);
+		JAXBContext context = checkNotNull(JAXBContext.newInstance(t.getClass()));
 		Marshaller m = checkNotNull(context.createMarshaller());
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		m.marshal(t, os);

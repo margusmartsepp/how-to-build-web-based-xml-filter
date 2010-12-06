@@ -15,6 +15,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import org.joda.time.DateTime;
+import com.google.appengine.repackaged.com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import entity.CompensationDateSpan;
 import entity.Employee;
@@ -231,6 +232,7 @@ public class PXML {
 	 * @return the int * @see PXML
 	 */
 	public static int filter0(HumanResources hm) {
+		Preconditions.checkNotNull(hm);
 		return hm.getEmployee().size();
 	}
 

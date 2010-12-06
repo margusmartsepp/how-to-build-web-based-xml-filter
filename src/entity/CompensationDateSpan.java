@@ -9,6 +9,7 @@
 
 package entity;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -62,9 +63,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		return String.format(
 				"CompensationDateSpan [id=%s, start=%s, end=%s, compensated=%s]", id,
-				start, end, compensated);
+				dateFormat.format(start), dateFormat.format(end), compensated);
 	}
 
 	/** The start. */
