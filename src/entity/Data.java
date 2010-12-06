@@ -10,6 +10,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +20,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.google.appengine.repackaged.com.google.common.base.Preconditions;
+import com.google.appengine.repackaged.com.google.common.collect.Lists;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -83,16 +86,16 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	protected double hourRate;
 
 	/** The vacation. */
-	protected List<CompensationDateSpan> vacation;
+	protected List<CompensationDateSpan> vacation = Lists.newArrayList();
 
 	/** The holiday. */
-	protected List<CompensationDateSpan> holiday;
+	protected List<CompensationDateSpan> holiday = Lists.newArrayList();
 
 	/** The std. */
-	protected List<CompensationDateSpan> std;
+	protected List<CompensationDateSpan> std = Lists.newArrayList();
 
 	/** The ltd. */
-	protected List<CompensationDateSpan> ltd;
+	protected List<CompensationDateSpan> ltd = Lists.newArrayList();
 
 	/** The id. */
 	@XmlAttribute protected Long id;
@@ -146,8 +149,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	/**
 	 * Gets the value of the creditCard property.
 	 * 
-	
-	 * @return possible object is {@link String } */
+	 * 
+	 * @return possible object is {@link String }
+	 */
 	public String getCreditCard() {
 		return creditCard;
 	}
@@ -168,8 +172,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link String } */
+	 * 
+	 * @return possible object is {@link String }
+	 */
 	public String getOccupationTitle() {
 		return occupationTitle;
 	}
@@ -190,8 +195,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link String } */
+	 * 
+	 * @return possible object is {@link String }
+	 */
 	public String getDepartmentTitle() {
 		return departmentTitle;
 	}
@@ -212,8 +218,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link XMLGregorianCalendar } */
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 */
 	public Date getHireDate() {
 		return hireDate;
 	}
@@ -222,11 +229,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	@Override public String toString() {
+	@Override public String toString() throws NullPointerException {
+		Preconditions.checkNotNull(hireDate);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		return String.format(
 				"Data [id=%s, creditCard=%s, occupationTitle=%s, departmentTitle=%s, hireDate=%s, hourRate=%s, vacation=%s, holiday=%s, std=%s, ltd=%s]",
-				id, creditCard, occupationTitle, departmentTitle, hireDate, hourRate,
-				vacation, holiday, std, ltd);
+				id, creditCard, occupationTitle, departmentTitle,
+				dateFormat.format(hireDate), hourRate, vacation, holiday, std, ltd);
 	}
 
 	/**
@@ -244,8 +253,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * Gets the value of the hourRate property.
 	 * 
 	 * 
-	
-	 * @return the hour rate */
+	 * 
+	 * @return the hour rate
+	 */
 	public double getHourRate() {
 		return hourRate;
 	}
@@ -281,8 +291,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * Objects of the following type(s) are allowed in the list
 	 * 
 	 * 
-	
-	 * @return the vacation {@link CompensationDateSpan } */
+	 * 
+	 * @return the vacation {@link CompensationDateSpan }
+	 */
 	public List<CompensationDateSpan> getVacation() {
 		if (vacation == null) {
 			vacation = new ArrayList<CompensationDateSpan>();
@@ -311,8 +322,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * Objects of the following type(s) are allowed in the list
 	 * 
 	 * 
-	
-	 * @return the holiday {@link CompensationDateSpan } */
+	 * 
+	 * @return the holiday {@link CompensationDateSpan }
+	 */
 	public List<CompensationDateSpan> getHoliday() {
 		if (holiday == null) {
 			holiday = new ArrayList<CompensationDateSpan>();
@@ -341,8 +353,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * Objects of the following type(s) are allowed in the list
 	 * 
 	 * 
-	
-	 * @return the std {@link CompensationDateSpan } */
+	 * 
+	 * @return the std {@link CompensationDateSpan }
+	 */
 	public List<CompensationDateSpan> getStd() {
 		if (std == null) {
 			std = new ArrayList<CompensationDateSpan>();
@@ -371,8 +384,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * Objects of the following type(s) are allowed in the list
 	 * 
 	 * 
-	
-	 * @return the ltd {@link CompensationDateSpan } */
+	 * 
+	 * @return the ltd {@link CompensationDateSpan }
+	 */
 	public List<CompensationDateSpan> getLtd() {
 		if (ltd == null) {
 			ltd = new ArrayList<CompensationDateSpan>();
@@ -385,8 +399,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link Long } */
+	 * 
+	 * @return possible object is {@link Long }
+	 */
 	public Long getId() {
 		return id;
 	}

@@ -10,6 +10,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -62,9 +63,10 @@ import javax.xml.bind.annotation.XmlType;
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		return String.format(
 				"Employee [id=%s, person=%s, data=%s, modifiedDate=%s]", id, person,
-				data, modifiedDate);
+				data, dateFormat.format(modifiedDate));
 	}
 
 	/** The person. */
@@ -82,9 +84,10 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the person property.
 	 * 
-	
 	 * 
-	 * @return possible object is {@link Person } */
+	 * 
+	 * @return possible object is {@link Person }
+	 */
 	public Person getPerson() {
 		return person;
 	}
@@ -103,9 +106,10 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the data property.
 	 * 
-	
 	 * 
-	 * @return possible object is {@link Data } */
+	 * 
+	 * @return possible object is {@link Data }
+	 */
 	public Data getData() {
 		return data;
 	}
@@ -124,9 +128,10 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the modifiedDate property.
 	 * 
-	
 	 * 
-	 * @return possible object is {@link Date } */
+	 * 
+	 * @return possible object is {@link Date }
+	 */
 	public Date getModifiedDate() {
 		return modifiedDate;
 	}
@@ -145,9 +150,10 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the id property.
 	 * 
-	
 	 * 
-	 * @return possible object is {@link Long } */
+	 * 
+	 * @return possible object is {@link Long }
+	 */
 	public Long getId() {
 		return id;
 	}

@@ -10,12 +10,14 @@
 package entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import com.google.appengine.repackaged.com.google.common.base.Preconditions;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -106,18 +108,21 @@ import javax.xml.bind.annotation.XmlType;
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	@Override public String toString() {
+	@Override public String toString() throws NullPointerException {
+		Preconditions.checkNotNull(birthday);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		return String.format(
 				"Person [id=%s, name=%s, isMale=%s, birthday=%s, iCi=%s]", id, name,
-				isMale, birthday, iCi);
+				isMale, dateFormat.format(birthday), iCi);
 	}
 
 	/**
 	 * Gets the value of the isMale property.
 	 * 
 	 * 
-	
-	 * @return true, if is checks if is male */
+	 * 
+	 * @return true, if is checks if is male
+	 */
 	public boolean isIsMale() {
 		return isMale;
 	}
@@ -137,8 +142,9 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link String } */
+	 * 
+	 * @return possible object is {@link String }
+	 */
 	public String getName() {
 		return name;
 	}
@@ -159,8 +165,9 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link Date } */
+	 * 
+	 * @return possible object is {@link Date }
+	 */
 	public Date getBirthday() {
 		return birthday;
 	}
@@ -181,8 +188,9 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link ContactInfo } */
+	 * 
+	 * @return possible object is {@link ContactInfo }
+	 */
 	public ContactInfo getICi() {
 		return iCi;
 	}
@@ -203,8 +211,9 @@ import javax.xml.bind.annotation.XmlType;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link Long } */
+	 * 
+	 * @return possible object is {@link Long }
+	 */
 	public Long getId() {
 		return id;
 	}
