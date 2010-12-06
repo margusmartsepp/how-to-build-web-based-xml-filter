@@ -8,6 +8,7 @@ import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import entity.ContactInfo;
 
 /**
  * The class <code>ContactInfoTest</code> contains tests for the class

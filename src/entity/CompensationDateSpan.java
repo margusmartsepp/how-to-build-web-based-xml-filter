@@ -188,22 +188,14 @@ public class CompensationDateSpan implements Serializable {
 	 * @param compensated
 	 *        the compensated
 	 * 
-	 * 
-	 * @throws IllegalArgumentException
-	 *         the illegal argument exception if start is after end * @throws
-	 *         NullPointerException the null pointer exception if start or end is
-	 *         null * @throws NullPointerException
 	 */
 	public CompensationDateSpan(Long id, Date start, Date end, boolean compensated)
-			throws IllegalArgumentException, NullPointerException {
+			throws NullPointerException {
 		super();
-		this.id = id;
-		this.start = start;
-		this.end = end;
-		this.compensated = compensated;
-
-		if (this.start.compareTo(this.end) > 0)
-			throw new IllegalArgumentException(start + " after " + end);
+		this.id = Preconditions.checkNotNull(id);
+		this.start = Preconditions.checkNotNull(start);
+		this.end = Preconditions.checkNotNull(end);
+		this.compensated = Preconditions.checkNotNull(compensated);
 	}
 
 }

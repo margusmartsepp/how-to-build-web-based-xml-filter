@@ -12,6 +12,7 @@ package entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
@@ -38,7 +39,7 @@ import javax.xml.bind.annotation.XmlValue;
  * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "mapTypeEntry",
-		propOrder = { "value" }) public class MapTypeEntry {
+		propOrder = { "value" }) @XmlRootElement public class MapTypeEntry {
 
 	/** The value. */
 	@XmlValue protected double value;
@@ -57,8 +58,9 @@ import javax.xml.bind.annotation.XmlValue;
 	/**
 	 * Gets the value of the value property.
 	 * 
-	
-	 * @return the value */
+	 * 
+	 * @return the value
+	 */
 	public double getValue() {
 		return value;
 	}
@@ -76,9 +78,10 @@ import javax.xml.bind.annotation.XmlValue;
 	/**
 	 * Gets the value of the key property.
 	 * 
-	
 	 * 
-	 * @return possible object is {@link String } */
+	 * 
+	 * @return possible object is {@link String }
+	 */
 	public String getKey() {
 		return key;
 	}

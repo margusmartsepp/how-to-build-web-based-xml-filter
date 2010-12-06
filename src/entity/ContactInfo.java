@@ -15,6 +15,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 // TODO: Auto-generated Javadoc
@@ -44,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
  * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "contactInfo",
-		propOrder = { "emailAddresses", "phoneNumbers" }) public class ContactInfo
+		propOrder = { "emailAddresses", "phoneNumbers" }) @XmlRootElement public class ContactInfo
 		implements Serializable {
 	/**
 	 * <p>
@@ -95,8 +96,9 @@ import javax.xml.bind.annotation.XmlType;
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link String }
 	 * 
-	
-	 * @return the email addresses */
+	 * 
+	 * @return the email addresses
+	 */
 	public List<String> getEmailAddresses() {
 		if (emailAddresses == null) {
 			emailAddresses = new ArrayList<String>();
@@ -124,8 +126,9 @@ import javax.xml.bind.annotation.XmlType;
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link String }
 	 * 
-	
-	 * @return the phone numbers */
+	 * 
+	 * @return the phone numbers
+	 */
 	public List<String> getPhoneNumbers() {
 		if (phoneNumbers == null) {
 			phoneNumbers = new ArrayList<String>();
@@ -136,9 +139,10 @@ import javax.xml.bind.annotation.XmlType;
 	/**
 	 * Gets the value of the id property.
 	 * 
-	
 	 * 
-	 * @return possible object is {@link Long } */
+	 * 
+	 * @return possible object is {@link Long }
+	 */
 	public Long getId() {
 		return id;
 	}

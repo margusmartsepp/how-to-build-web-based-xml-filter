@@ -230,7 +230,60 @@ public class EmployeeTest {
 				"Employee [id=1, person=Person [id=null, name=null, isMale=false, birthday=null, iCi=null], data=Data [id=null, creditCard=null, occupationTitle=null, departmentTitle=null, hireDate=null, hourRate=0.0, vacation=null, holiday=null, std=null, ltd=null], modifiedDate=2010-12-06]",
 				result);
 	}
+	/**
+	 * Run the String toString() method test.
+	 * 
+	 * @throws Exception
+	 * 
+	 */
+	@Test public void testToString_2() throws Exception {
+		Date d1 = new DateTime(2010, 12, 6, 0, 0, 0, 0).toDate();
+		Date d2 = new DateTime(2010, 12, 7, 0, 0, 0, 0).toDate();
 
+		CompensationDateSpan cd = new CompensationDateSpan();
+		ContactInfo ci = new ContactInfo();
+		Data d = new Data();
+		Person p = new Person();
+		Employee em = new Employee();
+
+		ci.setId(1L);
+		ci.getEmailAddresses().add("some@where.com");
+		ci.getPhoneNumbers().add("46326234623");
+
+		cd.setId(1L);
+		cd.setCompensated(false);
+		cd.setStart(d1);
+		cd.setEnd(d2);
+
+		p.setId(1L);
+		p.setBirthday(d1);
+		p.setICi(ci);
+		p.setIsMale(true);
+		p.setName("Manual testing sucks");
+
+		d.setId(1L);
+		d.setCreditCard("23623623623");
+		d.setDepartmentTitle("326346234623");
+		d.setHireDate(d2);
+		d.setHourRate(234.4);
+		d.setOccupationTitle("sleeping beauty");
+		d.getVacation().add(cd);
+		d.getHoliday().add(cd);
+		d.getStd().add(cd);
+		d.getLtd().add(cd);
+
+		em.setId(1L);
+		em.setData(d);
+		em.setPerson(p);
+		em.setModifiedDate(d2);
+
+		String result = em.toString();
+
+		// add additional test code here
+		assertEquals(
+				"Employee [id=1, person=Person [id=1, name=Manual testing sucks, isMale=true, birthday=2010-12-06, iCi=ContactInfo [id=1, emailAddresses=[some@where.com], phoneNumbers=[46326234623]]], data=Data [id=1, creditCard=23623623623, occupationTitle=sleeping beauty, departmentTitle=326346234623, hireDate=2010-12-07, hourRate=234.4, vacation=[CompensationDateSpan [id=1, start=2010-12-06, end=2010-12-07, compensated=false]], holiday=[CompensationDateSpan [id=1, start=2010-12-06, end=2010-12-07, compensated=false]], std=[CompensationDateSpan [id=1, start=2010-12-06, end=2010-12-07, compensated=false]], ltd=[CompensationDateSpan [id=1, start=2010-12-06, end=2010-12-07, compensated=false]]], modifiedDate=2010-12-07]",
+				result);
+	}
 	/**
 	 * Perform pre-test initialization.
 	 * 

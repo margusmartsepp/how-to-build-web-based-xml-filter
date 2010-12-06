@@ -1,12 +1,18 @@
 package entity;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import java.util.Date;
 import javax.xml.bind.JAXBElement;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.joda.time.DateTime;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
- * The class <code>ObjectFactoryTest</code> contains tests for the class <code>{@link ObjectFactory}</code>.
- *
+ * The class <code>ObjectFactoryTest</code> contains tests for the class
+ * <code>{@link ObjectFactory}</code>.
+ * 
  * @generatedBy CodePro at 6.12.10 1:06
  * @author Margus Martsepp
  * @version $Revision: 1.0 $
@@ -14,31 +20,29 @@ import static org.junit.Assert.*;
 public class ObjectFactoryTest {
 	/**
 	 * Run the ObjectFactory() constructor test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testObjectFactory_1()
-		throws Exception {
+	@Test public void testObjectFactory_1() throws Exception {
 
 		ObjectFactory result = new ObjectFactory();
 
 		// add additional test code here
 		assertNotNull(result);
 	}
+	static Date d1 = new DateTime(2010, 12, 6, 0, 0, 0, 0).toDate();
+	static Date d2 = new DateTime(2010, 12, 7, 0, 0, 0, 0).toDate();
 
 	/**
 	 * Run the CompensationDateSpan createCompensationDateSpan() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateCompensationDateSpan_1()
-		throws Exception {
+	@Test public void testCreateCompensationDateSpan_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		CompensationDateSpan result = fixture.createCompensationDateSpan();
@@ -48,20 +52,18 @@ public class ObjectFactoryTest {
 		assertEquals(null, result.getStart());
 		assertEquals(null, result.getEnd());
 		assertEquals(false, result.isCompensated());
-		assertEquals("CompensationDateSpan [id=null, start=null, end=null, compensated=false]", result.toString());
 		assertEquals(null, result.getId());
 	}
 
 	/**
-	 * Run the JAXBElement<CompensationDateSpan> createCompensationDateSpan(CompensationDateSpan) method test.
-	 *
+	 * Run the JAXBElement<CompensationDateSpan>
+	 * createCompensationDateSpan(CompensationDateSpan) method test.
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateCompensationDateSpan_2()
-		throws Exception {
+	@Test public void testCreateCompensationDateSpan_2() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 		CompensationDateSpan value = new CompensationDateSpan();
 
@@ -76,34 +78,29 @@ public class ObjectFactoryTest {
 
 	/**
 	 * Run the ContactInfo createContactInfo() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateContactInfo_1()
-		throws Exception {
+	@Test public void testCreateContactInfo_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		ContactInfo result = fixture.createContactInfo();
 
 		// add additional test code here
 		assertNotNull(result);
-		assertEquals("ContactInfo [id=null, emailAddresses=[], phoneNumbers=[]]", result.toString());
 		assertEquals(null, result.getId());
 	}
 
 	/**
 	 * Run the Data createData() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateData_1()
-		throws Exception {
+	@Test public void testCreateData_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		Data result = fixture.createData();
@@ -115,20 +112,17 @@ public class ObjectFactoryTest {
 		assertEquals(null, result.getDepartmentTitle());
 		assertEquals(null, result.getHireDate());
 		assertEquals(0.0, result.getHourRate(), 1.0);
-		assertEquals("Data [id=null, creditCard=null, occupationTitle=null, departmentTitle=null, hireDate=null, hourRate=0.0, vacation=[], holiday=[], std=[], ltd=[]]", result.toString());
 		assertEquals(null, result.getId());
 	}
 
 	/**
 	 * Run the JAXBElement<Data> createData(Data) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateData_2()
-		throws Exception {
+	@Test public void testCreateData_2() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 		Data value = new Data();
 
@@ -143,14 +137,12 @@ public class ObjectFactoryTest {
 
 	/**
 	 * Run the Employee createEmployee() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateEmployee_1()
-		throws Exception {
+	@Test public void testCreateEmployee_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		Employee result = fixture.createEmployee();
@@ -159,21 +151,18 @@ public class ObjectFactoryTest {
 		assertNotNull(result);
 		assertEquals(null, result.getPerson());
 		assertEquals(null, result.getModifiedDate());
-		assertEquals("Employee [id=null, person=null, data=null, modifiedDate=null]", result.toString());
 		assertEquals(null, result.getId());
 		assertEquals(null, result.getData());
 	}
 
 	/**
 	 * Run the JAXBElement<Employee> createEmployee(Employee) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateEmployee_2()
-		throws Exception {
+	@Test public void testCreateEmployee_2() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 		Employee value = new Employee();
 
@@ -188,14 +177,12 @@ public class ObjectFactoryTest {
 
 	/**
 	 * Run the HumanResources createHumanResources() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateHumanResources_1()
-		throws Exception {
+	@Test public void testCreateHumanResources_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		HumanResources result = fixture.createHumanResources();
@@ -206,15 +193,14 @@ public class ObjectFactoryTest {
 	}
 
 	/**
-	 * Run the JAXBElement<HumanResources> createHumanResources(HumanResources) method test.
-	 *
+	 * Run the JAXBElement<HumanResources> createHumanResources(HumanResources)
+	 * method test.
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateHumanResources_2()
-		throws Exception {
+	@Test public void testCreateHumanResources_2() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 		HumanResources value = new HumanResources();
 
@@ -229,35 +215,30 @@ public class ObjectFactoryTest {
 
 	/**
 	 * Run the MapTypeEntry createMapTypeEntry() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateMapTypeEntry_1()
-		throws Exception {
+	@Test public void testCreateMapTypeEntry_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		MapTypeEntry result = fixture.createMapTypeEntry();
 
 		// add additional test code here
 		assertNotNull(result);
-		assertEquals("MapTypeEntry [value=0.0, key=null]", result.toString());
 		assertEquals(0.0, result.getValue(), 1.0);
 		assertEquals(null, result.getKey());
 	}
 
 	/**
 	 * Run the Person createPerson() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreatePerson_1()
-		throws Exception {
+	@Test public void testCreatePerson_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		Person result = fixture.createPerson();
@@ -267,21 +248,18 @@ public class ObjectFactoryTest {
 		assertEquals(null, result.getICi());
 		assertEquals(null, result.getBirthday());
 		assertEquals(false, result.isIsMale());
-		assertEquals("Person [id=null, name=null, isMale=false, birthday=null, iCi=null]", result.toString());
 		assertEquals(null, result.getName());
 		assertEquals(null, result.getId());
 	}
 
 	/**
 	 * Run the JAXBElement<Person> createPerson(Person) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreatePerson_2()
-		throws Exception {
+	@Test public void testCreatePerson_2() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 		Person value = new Person();
 
@@ -296,14 +274,12 @@ public class ObjectFactoryTest {
 
 	/**
 	 * Run the Report createRaport() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateRaport_1()
-		throws Exception {
+	@Test public void testCreateRaport_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		Report result = fixture.createRaport();
@@ -311,20 +287,17 @@ public class ObjectFactoryTest {
 		// add additional test code here
 		assertNotNull(result);
 		assertEquals(0.0, result.getGrandTotal(), 1.0);
-		assertEquals("Report [id=null, depWageSum={}, grandTotal=0.0]", result.toString());
 		assertEquals(null, result.getId());
 	}
 
 	/**
 	 * Run the JAXBElement<Report> createRaport(Report) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateRaport_2()
-		throws Exception {
+	@Test public void testCreateRaport_2() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 		Report value = new Report();
 
@@ -338,15 +311,14 @@ public class ObjectFactoryTest {
 	}
 
 	/**
-	 * Run the StringToDoubleMapAdapter createStringToDoubleMapAdapter() method test.
-	 *
+	 * Run the StringToDoubleMapAdapter createStringToDoubleMapAdapter() method
+	 * test.
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testCreateStringToDoubleMapAdapter_1()
-		throws Exception {
+	@Test public void testCreateStringToDoubleMapAdapter_1() throws Exception {
 		ObjectFactory fixture = new ObjectFactory();
 
 		StringToDoubleMapAdapter result = fixture.createStringToDoubleMapAdapter();
@@ -357,37 +329,34 @@ public class ObjectFactoryTest {
 
 	/**
 	 * Perform pre-test initialization.
-	 *
+	 * 
 	 * @throws Exception
 	 *         if the initialization fails for some reason
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Before
-	public void setUp()
-		throws Exception {
+	@Before public void setUp() throws Exception {
 		// add additional set up code here
 	}
 
 	/**
 	 * Perform post-test clean-up.
-	 *
+	 * 
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@After
-	public void tearDown()
-		throws Exception {
+	@After public void tearDown() throws Exception {
 		// Add additional tear down code here
 	}
 
 	/**
 	 * Launch the test.
-	 *
-	 * @param args the command line arguments
-	 *
+	 * 
+	 * @param args
+	 *        the command line arguments
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
 	public static void main(String[] args) {

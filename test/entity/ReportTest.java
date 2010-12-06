@@ -1,13 +1,18 @@
 package entity;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import java.util.HashMap;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import com.google.appengine.repackaged.com.google.common.collect.ImmutableMap;
+import com.google.appengine.repackaged.com.google.common.collect.Maps;
 
 /**
- * The class <code>ReportTest</code> contains tests for the class <code>{@link Report}</code>.
- *
+ * The class <code>ReportTest</code> contains tests for the class
+ * <code>{@link Report}</code>.
+ * 
  * @generatedBy CodePro at 6.12.10 1:06
  * @author Margus Martsepp
  * @version $Revision: 1.0 $
@@ -15,35 +20,32 @@ import com.google.appengine.repackaged.com.google.common.collect.ImmutableMap;
 public class ReportTest {
 	/**
 	 * Run the Report() constructor test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testReport_1()
-		throws Exception {
+	@Test public void testReport_1() throws Exception {
 
 		Report result = new Report();
 
 		// add additional test code here
 		assertNotNull(result);
 		assertEquals(0.0, result.getGrandTotal(), 1.0);
-		assertEquals("Report [id=null, depWageSum={}, grandTotal=0.0]", result.toString());
+		assertEquals("Report [id=null, depWageSum={}, grandTotal=0.0]",
+				result.toString());
 		assertEquals(null, result.getId());
 	}
 
 	/**
 	 * Run the Report(HashMap<String,Double>,Long) constructor test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testReport_2()
-		throws Exception {
-		HashMap<String, Double> depWageSum = new HashMap();
+	@Test public void testReport_2() throws Exception {
+		HashMap<String, Double> depWageSum = Maps.newHashMap();
 		Long id = new Long(1L);
 
 		Report result = new Report(depWageSum, id);
@@ -51,21 +53,20 @@ public class ReportTest {
 		// add additional test code here
 		assertNotNull(result);
 		assertEquals(0.0, result.getGrandTotal(), 1.0);
-		assertEquals("Report [id=1, depWageSum={}, grandTotal=0.0]", result.toString());
+		assertEquals("Report [id=1, depWageSum={}, grandTotal=0.0]",
+				result.toString());
 		assertEquals(new Long(1L), result.getId());
 	}
 
 	/**
 	 * Run the Report(HashMap<String,Double>,Long) constructor test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testReport_3()
-		throws Exception {
-		HashMap<String, Double> depWageSum = new HashMap();
+	@Test public void testReport_3() throws Exception {
+		HashMap<String, Double> depWageSum = Maps.newHashMap();
 		Long id = new Long(1L);
 
 		Report result = new Report(depWageSum, id);
@@ -73,23 +74,22 @@ public class ReportTest {
 		// add additional test code here
 		assertNotNull(result);
 		assertEquals(0.0, result.getGrandTotal(), 1.0);
-		assertEquals("Report [id=1, depWageSum={}, grandTotal=0.0]", result.toString());
+		assertEquals("Report [id=1, depWageSum={}, grandTotal=0.0]",
+				result.toString());
 		assertEquals(new Long(1L), result.getId());
 	}
 
 	/**
 	 * Run the ImmutableMap<String, Double> getDepWageSum() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testGetDepWageSum_1()
-		throws Exception {
+	@Test public void testGetDepWageSum_1() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
 
 		ImmutableMap<String, Double> result = fixture.getDepWageSum();
@@ -101,17 +101,15 @@ public class ReportTest {
 
 	/**
 	 * Run the double getGrandTotal() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testGetGrandTotal_1()
-		throws Exception {
+	@Test public void testGetGrandTotal_1() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
 
 		double result = fixture.getGrandTotal();
@@ -122,17 +120,15 @@ public class ReportTest {
 
 	/**
 	 * Run the Long getId() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testGetId_1()
-		throws Exception {
+	@Test public void testGetId_1() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
 
 		Long result = fixture.getId();
@@ -150,17 +146,15 @@ public class ReportTest {
 
 	/**
 	 * Run the void push(String,Double) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testPush_1()
-		throws Exception {
+	@Test public void testPush_1() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
 		String departmentTitle = "";
 		Double hourRate = new Double(1.0);
@@ -172,17 +166,15 @@ public class ReportTest {
 
 	/**
 	 * Run the void push(String,Double) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testPush_2()
-		throws Exception {
+	@Test public void testPush_2() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
 		String departmentTitle = "";
 		Double hourRate = new Double(1.0);
@@ -191,22 +183,56 @@ public class ReportTest {
 
 		// add additional test code here
 	}
-
 	/**
-	 * Run the void setDepWageSum(HashMap<String,Double>) method test.
-	 *
+	 * Run the void push(String,Double) method test.
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testSetDepWageSum_1()
-		throws Exception {
+	@Test public void testPush_3() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
-		HashMap<String, Double> depWageSum = new HashMap();
+		String departmentTitle = "";
+		Double hourRate = new Double(1.0);
+
+		fixture.push(departmentTitle, hourRate);
+		fixture.push(departmentTitle, hourRate);
+		// add additional test code here
+	}
+	/**
+	 * Run the void push(String,Double) method test.
+	 * 
+	 * @throws Exception
+	 * 
+	 * @generatedBy CodePro at 6.12.10 1:06
+	 */
+	@Test(expected = Exception.class) public void testPush_4() throws Exception {
+		Report fixture = new Report();
+		fixture.setId(new Long(1L));
+		fixture.depWageSum = Maps.newHashMap();
+		fixture.grandTotal = 1.0;
+		String departmentTitle = "";
+		Double hourRate = new Double(-1.0);
+
+		fixture.push(departmentTitle, hourRate);
+
+	}
+	/**
+	 * Run the void setDepWageSum(HashMap<String,Double>) method test.
+	 * 
+	 * @throws Exception
+	 * 
+	 * @generatedBy CodePro at 6.12.10 1:06
+	 */
+	@Test public void testSetDepWageSum_1() throws Exception {
+		Report fixture = new Report();
+		fixture.setId(new Long(1L));
+		fixture.depWageSum = Maps.newHashMap();
+		fixture.grandTotal = 1.0;
+		HashMap<String, Double> depWageSum = Maps.newHashMap();
 
 		fixture.setDepWageSum(depWageSum);
 
@@ -215,19 +241,17 @@ public class ReportTest {
 
 	/**
 	 * Run the void setDepWageSum(HashMap<String,Double>) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testSetDepWageSum_2()
-		throws Exception {
+	@Test public void testSetDepWageSum_2() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
-		HashMap<String, Double> depWageSum = new HashMap();
+		HashMap<String, Double> depWageSum = Maps.newHashMap();
 
 		fixture.setDepWageSum(depWageSum);
 
@@ -236,19 +260,17 @@ public class ReportTest {
 
 	/**
 	 * Run the void setDepWageSum(HashMap<String,Double>) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testSetDepWageSum_3()
-		throws Exception {
+	@Test public void testSetDepWageSum_3() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
-		HashMap<String, Double> depWageSum = new HashMap();
+		HashMap<String, Double> depWageSum = Maps.newHashMap();
 
 		fixture.setDepWageSum(depWageSum);
 
@@ -257,38 +279,43 @@ public class ReportTest {
 
 	/**
 	 * Run the void setDepWageSum(HashMap<String,Double>) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 6.12.10 1:06
+	 * 
 	 */
-	@Test
-	public void testSetDepWageSum_4()
-		throws Exception {
-		Report fixture = new Report();
-		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
-		fixture.grandTotal = 1.0;
-		HashMap<String, Double> depWageSum = new HashMap();
-
-		fixture.setDepWageSum(depWageSum);
-
+	@Test public void testSetDepWageSum_4() throws Exception {
+		HashMap<String, Double> hm = Maps.newHashMap();
+		hm.put("1", 5.3);
+		Report fixture = new Report(hm, 1L);
+		hm.put("1", 55.6);
+		fixture.setDepWageSum(hm);
 		// add additional test code here
 	}
-
+	/**
+	 * Run the void setDepWageSum(HashMap<String,Double>) method test.
+	 * 
+	 * @throws Exception
+	 * 
+	 */
+	@Test public void testSetDepWageSum_5() throws Exception {
+		HashMap<String, Double> hm = Maps.newHashMap();
+		hm.put("1", 5.3);
+		Report fixture = new Report(hm, 1L);
+		hm.put("1", -55.6);
+		fixture.setDepWageSum(hm);
+		// add additional test code here
+	}
 	/**
 	 * Run the void setId(Long) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testSetId_1()
-		throws Exception {
+	@Test public void testSetId_1() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
 		Long value = new Long(1L);
 
@@ -299,17 +326,15 @@ public class ReportTest {
 
 	/**
 	 * Run the String toString() method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testToString_1()
-		throws Exception {
+	@Test public void testToString_1() throws Exception {
 		Report fixture = new Report();
 		fixture.setId(new Long(1L));
-		fixture.depWageSum = new HashMap();
+		fixture.depWageSum = Maps.newHashMap();
 		fixture.grandTotal = 1.0;
 
 		String result = fixture.toString();
@@ -320,37 +345,34 @@ public class ReportTest {
 
 	/**
 	 * Perform pre-test initialization.
-	 *
+	 * 
 	 * @throws Exception
 	 *         if the initialization fails for some reason
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Before
-	public void setUp()
-		throws Exception {
+	@Before public void setUp() throws Exception {
 		// add additional set up code here
 	}
 
 	/**
 	 * Perform post-test clean-up.
-	 *
+	 * 
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@After
-	public void tearDown()
-		throws Exception {
+	@After public void tearDown() throws Exception {
 		// Add additional tear down code here
 	}
 
 	/**
 	 * Launch the test.
-	 *
-	 * @param args the command line arguments
-	 *
+	 * 
+	 * @param args
+	 *        the command line arguments
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
 	public static void main(String[] args) {

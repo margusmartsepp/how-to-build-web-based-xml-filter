@@ -13,6 +13,15 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
+import entity.CompensationDateSpan;
+import entity.ContactInfo;
+import entity.Data;
+import entity.Employee;
+import entity.HumanResources;
+import entity.MapTypeEntry;
+import entity.Person;
+import entity.Report;
+import entity.StringToDoubleMapAdapter;
 
 // TODO: Auto-generated Javadoc
 /**

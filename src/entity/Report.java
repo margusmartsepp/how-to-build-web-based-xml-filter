@@ -16,6 +16,7 @@ import java.util.Map.Entry;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.google.appengine.repackaged.com.google.common.base.Preconditions;
 import com.google.appengine.repackaged.com.google.common.collect.ImmutableMap;
@@ -48,7 +49,8 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
  * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "raport", propOrder = {
-		"depWageSum", "grandTotal" }) public class Report implements Serializable {
+		"depWageSum", "grandTotal" }) @XmlRootElement public class Report implements
+		Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to
@@ -72,9 +74,10 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
 	 * @param id
 	 *        the id
 	 * 
-	
+	 * 
 	 * @throws NullPointerException
-	 *         the null pointer exception */
+	 *         the null pointer exception
+	 */
 	public Report(final HashMap<String, Double> depWageSum, final Long id)
 			throws NullPointerException {
 		super();
@@ -108,8 +111,9 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link ImmutableMap<String, Double> } */
+	 * 
+	 * @return possible object is {@link ImmutableMap<String, Double> }
+	 */
 	public ImmutableMap<String, Double> getDepWageSum() {
 		return ImmutableMap.copyOf(depWageSum);
 	}
@@ -118,8 +122,9 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
 	 * Gets the value of the grandTotal property.
 	 * 
 	 * 
-	
-	 * @return the grand total */
+	 * 
+	 * @return the grand total
+	 */
 	public double getGrandTotal() {
 		return grandTotal;
 	}
@@ -129,8 +134,9 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
 	 * 
 	 * 
 	 * 
-	
-	 * @return possible object is {@link Long } */
+	 * 
+	 * @return possible object is {@link Long }
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -154,9 +160,10 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
 	 * @param depWageSum
 	 *        the dep wage sum
 	 * 
-	
+	 * 
 	 * @throws NullPointerException
-	 *         the null pointer exception */
+	 *         the null pointer exception
+	 */
 	public synchronized void setDepWageSum(
 			final HashMap<String, Double> depWageSum) throws NullPointerException {
 		Preconditions.checkNotNull(depWageSum);
@@ -182,11 +189,12 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
 	 * @param hourRate
 	 *        the hour rate
 	 * 
-	
-	
+	 * 
+	 * 
 	 * @throws NullPointerException
-	 *         the null pointer exception * @throws IllegalArgumentException
-	 *         the illegal argument exception */
+	 *         the null pointer exception * @throws IllegalArgumentException the
+	 *         illegal argument exception
+	 */
 	public synchronized void push(
 			final String departmentTitle, final Double hourRate) throws NullPointerException,
 			IllegalArgumentException {
@@ -197,8 +205,9 @@ import com.google.appengine.repackaged.com.google.common.collect.Maps;
 		bd = bd.add(BigDecimal.valueOf(hourRate));
 		grandTotal = bd.doubleValue();
 		synchronized (this.depWageSum) {
-			if (this.depWageSum.containsKey(departmentTitle)) this.depWageSum.put(
-					departmentTitle, this.depWageSum.get(departmentTitle) + hourRate);
+			if (this.depWageSum.containsKey(departmentTitle)) //
+			this.depWageSum.put(departmentTitle,
+					this.depWageSum.get(departmentTitle) + hourRate);
 			else this.depWageSum.put(departmentTitle, hourRate);
 		}
 	}

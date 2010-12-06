@@ -24,7 +24,7 @@ public class CompensationDateSpanTest {
 	 * 
 	 * @generatedBy CodePro at 6.12.10 1:07
 	 */
-	@Test(timeout = 3000) public void testCompensationDateSpan_1() throws Exception {
+	@Test public void testCompensationD() throws Exception {
 
 		CompensationDateSpan result = new CompensationDateSpan();
 
@@ -56,9 +56,32 @@ public class CompensationDateSpanTest {
 		assertEquals(
 				"CompensationDateSpan [id=1, start=2010-12-06, end=2010-12-07, compensated=true]",
 				result.toString());
+		assertEquals(start, result.getStart());
+		assertEquals(end, result.getEnd());
 		assertEquals(new Long(1L), result.getId());
 	}
+	/**
+	 * Run the CompensationDateSpan(Long,Date,Date,boolean) constructor test.
+	 * 
+	 * @throws Exception
+	 */
+	@Test(expected = NullPointerException.class) public void testCompensationDateSpan_4() throws Exception {
+		Date start = d1;
+		Date end = d2;
+		boolean compensated = true;
 
+		CompensationDateSpan result = new CompensationDateSpan(null, start, end,
+				compensated);
+
+		assertNotNull(result);
+		assertEquals(true, result.isCompensated());
+		assertEquals(
+				"CompensationDateSpan [id=1, start=2010-12-06, end=2010-12-07, compensated=true]",
+				result.toString());
+		assertEquals(start, result.getStart());
+		assertEquals(end, result.getEnd());
+		assertEquals(new Long(1L), result.getId());
+	}
 	/**
 	 * Run the CompensationDateSpan(Long,Date,Date,boolean) constructor test.
 	 * 
@@ -79,13 +102,7 @@ public class CompensationDateSpanTest {
 		assertEquals(true, result.isCompensated());
 		assertEquals(new Long(1L), result.getId());
 	}
-	@Test(expected = java.lang.IllegalArgumentException.class) public void testCompensationDateSpan_4() throws Exception {
-		Long id = new Long(1L);
-		Date start = d2;
-		Date end = d1;
-		boolean compensated = true;
-		new CompensationDateSpan(id, start, end, compensated);
-	}
+
 	/**
 	 * Run the Date getEnd() method test.
 	 * 

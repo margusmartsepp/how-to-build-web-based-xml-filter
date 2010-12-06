@@ -7,6 +7,8 @@ import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import entity.ContactInfo;
+import entity.Person;
 
 /**
  * The class <code>PersonTest</code> contains tests for the class

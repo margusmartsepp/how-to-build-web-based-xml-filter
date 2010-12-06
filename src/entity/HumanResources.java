@@ -9,15 +9,17 @@
 
 package entity;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import com.google.appengine.repackaged.com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
+import com.google.common.collect.Lists;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -44,8 +46,8 @@ import com.google.common.base.Predicate;
  * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "humanResources",
-		propOrder = { "employee" }) public class HumanResources implements
-		Serializable {
+		propOrder = { "employee" }) @XmlRootElement public class HumanResources
+		implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to
@@ -57,7 +59,7 @@ import com.google.common.base.Predicate;
 	 */
 	private static final long serialVersionUID = 1L;
 	/** The employee. */
-	@XmlElement(name = "Employee") protected List<Employee> employee;
+	@XmlElement(name = "Employee") protected List<Employee> employee = Lists.newArrayList();
 
 	/**
 	 * Gets the value of the employee property.
@@ -125,8 +127,9 @@ import com.google.common.base.Predicate;
 	 *         exception
 	 */
 	public HumanResources filter(Predicate<Employee> predicate) throws NullPointerException {
+		Preconditions.checkNotNull(employee);
 		final ArrayList<Employee> result = new ArrayList<Employee>();
-		synchronized (checkNotNull(employee)) {
+		synchronized (employee) {
 			for (Employee element : employee) {
 				if (element != null) //
 					if (predicate.apply(element)) //

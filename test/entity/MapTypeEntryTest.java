@@ -1,6 +1,7 @@
 package entity;
 
 import org.junit.*;
+import entity.MapTypeEntry;
 import static org.junit.Assert.*;
 
 /**

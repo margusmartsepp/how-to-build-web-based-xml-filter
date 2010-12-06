@@ -16,8 +16,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.google.appengine.repackaged.com.google.common.base.Preconditions;
+import com.google.common.base.Preconditions;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -48,8 +49,8 @@ import com.google.appengine.repackaged.com.google.common.base.Preconditions;
  * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "person", propOrder = {
-		"name", "isMale", "birthday", "iCi" }) public class Person implements
-		Serializable {
+		"name", "isMale", "birthday", "iCi" }) @XmlRootElement public class Person
+		implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to

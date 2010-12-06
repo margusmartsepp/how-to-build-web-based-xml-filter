@@ -16,7 +16,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import com.google.common.base.Preconditions;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -46,8 +48,8 @@ import javax.xml.bind.annotation.XmlType;
  * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "employee", propOrder = {
-		"person", "data", "modifiedDate" }) public class Employee implements
-		Serializable {
+		"person", "data", "modifiedDate" }) @XmlRootElement public class Employee
+		implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to
@@ -63,6 +65,7 @@ import javax.xml.bind.annotation.XmlType;
 	 * @see java.lang.Object#toString()
 	 */
 	@Override public String toString() {
+		Preconditions.checkNotNull(modifiedDate);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		return String.format(
 				"Employee [id=%s, person=%s, data=%s, modifiedDate=%s]", id, person,
