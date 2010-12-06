@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE project>
-<project name="Filter XML">
+<project name="Filter XML" default="test">
 	<!-- Path variable declarations -->
 	<property name='app.version' value='0.1' />
 	<property name='app.name' value='Filter XML' />
@@ -8,6 +8,7 @@
 	<property name="src.dir" value="src" />
 	<property name="lib.dir" value="lib" />
 	<property name="classes.dir" value="classes" />
+	<property name="test.dir" value="test" />
 	<property name="data.dir" value="data" />
 	<property name="data.schema.dir" value="${data.dir}/schema" />
 	<property name="data.classes.dir" value="${data.dir}/classes" />
@@ -47,6 +48,19 @@
 		<javac srcdir="${src.dir}" destdir="${classes.dir}">
 			<classpath refid="classpath" />
 		</javac>
+		<echo message="Compile the test classes" />
+		<javac srcdir="${test.dir}" destdir="${classes.dir}">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile" description="Compiles test source code">
+		<echo message="Tests the application" />
+		<junit printsummary="on" fork="yes">
+			<classpath refid="classpath" />
+			<formatter type="plain" usefile="false" />
+			<test name="AllTests" />
+		</junit>
 	</target>
 
 	<target name="generate-schema" depends='compile' description="Generate schema">
@@ -62,7 +76,6 @@
 	<target name="compile-schema" depends='compile' description="Compile schema">
 		<echo message="Compiling the schema..." />
 		<mkdir dir="${data.classes.dir}" />
-		<xjc schema="${data.schema.dir}/schema1.xsd" destdir="${data.classes.dir}"
-			package="entity" removeOldOutput="yes" />
+		<xjc schema="${data.schema.dir}/schema1.xsd" destdir="${data.classes.dir}" package="entity" removeOldOutput="yes" />
 	</target>
 </project>

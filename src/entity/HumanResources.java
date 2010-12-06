@@ -80,8 +80,9 @@ import com.google.common.base.Predicate;
 	 * Objects of the following type(s) are allowed in the list {@link Employee }
 	 * 
 	 * 
-	
-	 * @return the employee */
+	 * 
+	 * @return the employee
+	 */
 	public List<Employee> getEmployee() {
 		if (employee == null) {
 			employee = new ArrayList<Employee>();
@@ -118,15 +119,18 @@ import com.google.common.base.Predicate;
 	 * 
 	 * @param predicate
 	 *        the predicate
-	
-	
-	 * @return the human resources * @throws NullPointerException
-	 *         the null pointer exception */
+	 * 
+	 * 
+	 * @return the human resources * @throws NullPointerException the null pointer
+	 *         exception
+	 */
 	public HumanResources filter(Predicate<Employee> predicate) throws NullPointerException {
 		final ArrayList<Employee> result = new ArrayList<Employee>();
 		synchronized (checkNotNull(employee)) {
 			for (Employee element : employee) {
-				if (element != null) if (predicate.apply(element)) result.add(element);
+				if (element != null) //
+					if (predicate.apply(element)) //
+						result.add(element);
 			}
 			employee.clear();
 			employee.addAll(result);

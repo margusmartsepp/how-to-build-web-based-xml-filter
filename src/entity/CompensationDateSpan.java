@@ -15,10 +15,11 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.google.appengine.repackaged.com.google.common.base.Preconditions;
 
-// TODO: Auto-generated Javadoc
 /**
  * <p>
  * Java class for compensationDateSpan complex type.
@@ -46,8 +47,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * @version $Revision: 1.0 $
  */
 @XmlAccessorType(XmlAccessType.FIELD) @XmlType(name = "compensationDateSpan",
-		propOrder = { "start", "end", "compensated" }) public class CompensationDateSpan
-		implements Serializable {
+		propOrder = { "start", "end", "compensated" }) @XmlRootElement//
+public class CompensationDateSpan implements Serializable {
 	/**
 	 * <p>
 	 * This is stable compatibility validator. This is used among other things to
@@ -62,8 +63,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	@Override public String toString() {
+	@Override public String toString() throws NullPointerException {
+		Preconditions.checkNotNull(start);
+		Preconditions.checkNotNull(end);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
 		return String.format(
 				"CompensationDateSpan [id=%s, start=%s, end=%s, compensated=%s]", id,
 				dateFormat.format(start), dateFormat.format(end), compensated);
