@@ -78,4 +78,12 @@
 		<mkdir dir="${data.classes.dir}" />
 		<xjc schema="${data.schema.dir}/schema1.xsd" destdir="${data.classes.dir}" package="entity" removeOldOutput="yes" />
 	</target>
+	
+	<target name='javadoc' depends='compile' description='Generate javadoc.'>
+		<echo message="Generating JavaDoc..." />
+		<javadoc use='true' author='true' version='true' access='package' sourcepath='src' packagenames='*.*' destdir='${javadoc.dir}' windowtitle='${app.name} ${app.version}' noqualifier='java.*:javax.*:com.sun.*' linksource='true'>
+			<classpath refid='classpath' />
+			<link href='http://java.sun.com/javase/6/docs/api/' />
+		</javadoc>
+	</target>
 </project>
