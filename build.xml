@@ -14,6 +14,7 @@
 	<property name="data.classes.dir" value="${data.dir}/classes" />
 	<property name="warfile" value="filter-xml" />
 	<property name="path" value="fxml" />
+	<property name="javadoc.dir" value="doc" />
 	<property name="tomcat.home" value="F:\apache-tomcat-7.0.5" />
 	
 
