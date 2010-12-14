@@ -35,7 +35,7 @@ import entity.adhoc.PXML;
 	@Override protected void doGet(
 			HttpServletRequest req, HttpServletResponse resp) throws ServletException,
 			IOException {
-
+		String path = getServletContext().getRealPath("");
 		ServletOutputStream os = resp.getOutputStream();
 		try {
 			String arg1, arg2, f, out = req.getParameter("out");
@@ -45,11 +45,8 @@ import entity.adhoc.PXML;
 			else if (out.compareToIgnoreCase("xml") == 0)
 				resp.setContentType("application/xml; charset=utf-8");
 
-			java.io.File fileRoot = new java.io.File("/data/testdata.xml");
-			System.out.println(fileRoot.getAbsolutePath() + " " + fileRoot.getCanonicalPath());
-
-			HumanResources hm = JAXB.read(HumanResources.class, "/data/testdata.xml");
-
+			HumanResources hm = JAXB.read(HumanResources.class,
+					path + "/data/testdata.xml");
 			Preconditions.checkNotNull(hm);
 
 			if ((f = req.getParameter("f")) == null) {
@@ -80,9 +77,9 @@ import entity.adhoc.PXML;
 			}
 
 			if (out == null || out.compareToIgnoreCase("csv") == 0) {
-				entity.adhoc.PXML.XSLT.toCSV(hm, os);
+				entity.adhoc.PXML.XSLT.toCSV(hm, path, os);
 			} else if (out.compareToIgnoreCase("html") == 0) {
-				entity.adhoc.PXML.XSLT.toHTML(hm, os);
+				entity.adhoc.PXML.XSLT.toHTML(hm, path, os);
 			} else if (out.compareToIgnoreCase("xml") == 0) {
 				entity.adhoc.PXML.XSLT.toXML(hm, os);
 			}

@@ -68,7 +68,6 @@ public class PXML {
 		final static String HTML = "/data/xsl/simple.xsl";
 		final static String CSV = "/data/xsl/csv.xsl";
 		static {
-
 			System.setProperty("javax.xml.transform.TransformerFactory",
 					"org.apache.xalan.xsltc.trax.TransformerFactoryImpl");
 		}
@@ -168,6 +167,7 @@ public class PXML {
 		 * 
 		 * @param hm
 		 *        the hm
+		 * @param path 
 		 * @param os
 		 *        the os
 		 * 
@@ -176,11 +176,11 @@ public class PXML {
 		 * @throws Exception
 		 *         the exception * @see PXML * @see XSLT
 		 */
-		public static void toHTML(HumanResources hm, OutputStream os) throws Exception {
+		public static void toHTML(HumanResources hm, String path, OutputStream os) throws Exception {
 			StringWriter sw = new StringWriter();
 			JAXB.write(hm, sw);
 			StringReader sr = new StringReader(sw.toString());
-			tWriter(sr, HTML, os);
+			tWriter(sr, path+HTML, os);
 		}
 		/**
 		 * Method readFileAsString.
@@ -208,6 +208,7 @@ public class PXML {
 		 * 
 		 * @param hm
 		 *        the hm
+		 * @param path 
 		 * @param os
 		 *        the os
 		 * 
@@ -216,11 +217,11 @@ public class PXML {
 		 * @throws Exception
 		 *         the exception * @see PXML * @see XSLT
 		 */
-		public static void toCSV(HumanResources hm, OutputStream os) throws Exception {
+		public static void toCSV(HumanResources hm, String path, OutputStream os) throws Exception {
 			StringWriter sw = new StringWriter();
 			JAXB.write(hm, sw);
 			StringReader sr = new StringReader(sw.toString());
-			tWriter(sr, CSV, os);
+			tWriter(sr,path+ CSV, os);
 		}
 	}
 

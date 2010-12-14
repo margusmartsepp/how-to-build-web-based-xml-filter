@@ -14,6 +14,8 @@
 	<property name="data.classes.dir" value="${data.dir}/classes" />
 	<property name="warfile" value="filter-xml" />
 	<property name="path" value="fxml" />
+	<property name="tomcat.home" value="F:\apache-tomcat-7.0.5" />
+	
 
 	<!-- Classes and Jars used to compile and test the application -->
 	<path id="classpath">
@@ -76,6 +78,13 @@
 		</war>
 	</target>
 
+	<target name="deployIT" depends="create-WAR" if="tomcat.home"
+	    description="deploy into the local servlet container">
+	          
+	    <unwar src="${warfile}.war" 
+	        dest="${tomcat.home}/webapps/${app.name}"/>
+	</target>
+	        	
 	<target name="generate-schema" depends='compile' description="Generate schema">
 		<echo message="Generating schemas..." />
 		<mkdir dir="${data.schema.dir}" />
@@ -99,4 +108,6 @@
 			<link href='http://java.sun.com/javase/6/docs/api/' />
 		</javadoc>
 	</target>
+	
+
 </project>
