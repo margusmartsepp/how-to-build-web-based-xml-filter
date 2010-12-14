@@ -11,7 +11,21 @@ Make
 ----
 Start Ant build
 
-    ant build.xml
+    ant 
 
 Or, click on the `[ant] RELEASE.ahk`. This requires AutoHotkey.
 
+Other Ant commands
+------------------
+
+To make war file:
+
+    ant clean compile create-WAR > "[out] war.txt"
+    
+To generate schema and source from it
+
+    ant clean compile generate-schema compile-schema
+    
+To make JavaDoc
+
+    ant clean compile JavaDoc

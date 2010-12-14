@@ -24,7 +24,6 @@ import entity.Report;
 
 // TODO: Auto-generated Javadoc
 /**
- * <img style="float:right; height=12em;" src="doc-files/clap.gif">
  * <p>
  * After doing the heavy lifting of creating, annotating and commenting the data
  * structure and its behavior, then this ad-hoc class provides the data
@@ -49,7 +48,6 @@ import entity.Report;
  */
 public class PXML {
 	/**
-	 * <img style="float:right; height=12em;" src="doc-files/bruteforce.jpg">
 	 * <p>
 	 * Note: This class contains AppEngine workaround hack in static context. Lack
 	 * of it caused most annoying bug when initiating xslt transformation. This is
@@ -167,7 +165,7 @@ public class PXML {
 		 * 
 		 * @param hm
 		 *        the hm
-		 * @param path 
+		 * @param path
 		 * @param os
 		 *        the os
 		 * 
@@ -180,7 +178,7 @@ public class PXML {
 			StringWriter sw = new StringWriter();
 			JAXB.write(hm, sw);
 			StringReader sr = new StringReader(sw.toString());
-			tWriter(sr, path+HTML, os);
+			tWriter(sr, path + HTML, os);
 		}
 		/**
 		 * Method readFileAsString.
@@ -208,7 +206,7 @@ public class PXML {
 		 * 
 		 * @param hm
 		 *        the hm
-		 * @param path 
+		 * @param path
 		 * @param os
 		 *        the os
 		 * 
@@ -221,7 +219,7 @@ public class PXML {
 			StringWriter sw = new StringWriter();
 			JAXB.write(hm, sw);
 			StringReader sr = new StringReader(sw.toString());
-			tWriter(sr,path+ CSV, os);
+			tWriter(sr, path + CSV, os);
 		}
 	}
 

@@ -25,7 +25,6 @@ import com.google.common.base.Preconditions;
 
 // TODO: Auto-generated Javadoc
 /**
- * <img style="float:right; height=12em;" src="doc-files/raged.gif">
  * <p>
  * This class provides tools to further simplify the automation of the entity
  * mappings between Java objects and XML data (from various sources) using JAXB
