@@ -18,9 +18,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.google.appengine.repackaged.com.google.common.base.Preconditions;
-import com.google.appengine.repackaged.com.google.common.collect.ImmutableMap;
-import com.google.appengine.repackaged.com.google.common.collect.Maps;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 
 // TODO: Auto-generated Javadoc
 /**

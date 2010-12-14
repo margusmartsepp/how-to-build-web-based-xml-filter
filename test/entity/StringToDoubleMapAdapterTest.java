@@ -1,16 +1,18 @@
 package entity;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import org.junit.*;
-import entity.StringToDoubleMapAdapter;
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
- * The class <code>StringToDoubleMapAdapterTest</code> contains tests for the class <code>{@link StringToDoubleMapAdapter}</code>.
- *
+ * The class <code>StringToDoubleMapAdapterTest</code> contains tests for the
+ * class <code>{@link StringToDoubleMapAdapter}</code>.
+ * 
  * @generatedBy CodePro at 6.12.10 1:06
  * @author Margus Martsepp
  * @version $Revision: 1.0 $
@@ -18,12 +20,10 @@ import static org.junit.Assert.*;
 public class StringToDoubleMapAdapterTest {
 	/**
 	 * Run the StringToDoubleMapAdapter() constructor test.
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testStringToDoubleMapAdapter_1()
-		throws Exception {
+	@Test public void testStringToDoubleMapAdapter_1() throws Exception {
 		StringToDoubleMapAdapter result = new StringToDoubleMapAdapter();
 		assertNotNull(result);
 		// add additional test code here
@@ -31,14 +31,12 @@ public class StringToDoubleMapAdapterTest {
 
 	/**
 	 * Run the StringToDoubleMapAdapter marshal(Map) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testMarshal_1()
-		throws Exception {
+	@Test public void testMarshal_1() throws Exception {
 		StringToDoubleMapAdapter fixture = new StringToDoubleMapAdapter();
 		fixture.entry = new ArrayList<StringToDoubleMapAdapter.MapTypeEntry>();
 		Map v = new HashMap();
@@ -51,14 +49,12 @@ public class StringToDoubleMapAdapterTest {
 
 	/**
 	 * Run the StringToDoubleMapAdapter marshal(Map) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testMarshal_2()
-		throws Exception {
+	@Test public void testMarshal_2() throws Exception {
 		StringToDoubleMapAdapter fixture = new StringToDoubleMapAdapter();
 		fixture.entry = new ArrayList<StringToDoubleMapAdapter.MapTypeEntry>();
 		Map v = new HashMap();
@@ -71,14 +67,12 @@ public class StringToDoubleMapAdapterTest {
 
 	/**
 	 * Run the Map unmarshal(StringToDoubleMapAdapter) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testUnmarshal_1()
-		throws Exception {
+	@Test public void testUnmarshal_1() throws Exception {
 		StringToDoubleMapAdapter fixture = new StringToDoubleMapAdapter();
 		fixture.entry = new ArrayList<StringToDoubleMapAdapter.MapTypeEntry>();
 		StringToDoubleMapAdapter v = new StringToDoubleMapAdapter();
@@ -93,14 +87,12 @@ public class StringToDoubleMapAdapterTest {
 
 	/**
 	 * Run the Map unmarshal(StringToDoubleMapAdapter) method test.
-	 *
+	 * 
 	 * @throws Exception
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Test
-	public void testUnmarshal_2()
-		throws Exception {
+	@Test public void testUnmarshal_2() throws Exception {
 		StringToDoubleMapAdapter fixture = new StringToDoubleMapAdapter();
 		fixture.entry = new ArrayList<StringToDoubleMapAdapter.MapTypeEntry>();
 		StringToDoubleMapAdapter v = new StringToDoubleMapAdapter();
@@ -115,37 +107,34 @@ public class StringToDoubleMapAdapterTest {
 
 	/**
 	 * Perform pre-test initialization.
-	 *
+	 * 
 	 * @throws Exception
 	 *         if the initialization fails for some reason
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@Before
-	public void setUp()
-		throws Exception {
+	@Before public void setUp() throws Exception {
 		// add additional set up code here
 	}
 
 	/**
 	 * Perform post-test clean-up.
-	 *
+	 * 
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
-	 *
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
-	@After
-	public void tearDown()
-		throws Exception {
+	@After public void tearDown() throws Exception {
 		// Add additional tear down code here
 	}
 
 	/**
 	 * Launch the test.
-	 *
-	 * @param args the command line arguments
-	 *
+	 * 
+	 * @param args
+	 *        the command line arguments
+	 * 
 	 * @generatedBy CodePro at 6.12.10 1:06
 	 */
 	public static void main(String[] args) {

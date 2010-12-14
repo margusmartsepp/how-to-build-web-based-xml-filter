@@ -6,8 +6,8 @@ import java.util.HashMap;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import com.google.appengine.repackaged.com.google.common.collect.ImmutableMap;
-import com.google.appengine.repackaged.com.google.common.collect.Maps;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 
 /**
  * The class <code>ReportTest</code> contains tests for the class

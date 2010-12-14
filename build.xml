@@ -12,6 +12,8 @@
 	<property name="data.dir" value="data" />
 	<property name="data.schema.dir" value="${data.dir}/schema" />
 	<property name="data.classes.dir" value="${data.dir}/classes" />
+	<property name="warfile" value="filter-xml" />
+	<property name="path" value="fxml" />
 
 	<!-- Classes and Jars used to compile and test the application -->
 	<path id="classpath">
@@ -54,13 +56,24 @@
 		</javac>
 	</target>
 
-	<target name="test" depends="compile" description="Compiles test source code">
+	<target name="test" depends="compile" description="Run tests">
 		<echo message="Tests the application" />
 		<junit printsummary="on" fork="yes">
 			<classpath refid="classpath" />
 			<formatter type="plain" usefile="false" />
 			<test name="AllTests" />
 		</junit>
+	</target>
+
+
+	<target name="create-WAR" depends="compile" description="Generates war">
+		<war destfile="${warfile}.war" webxml="WebContent/WEB-INF/web.xml" update="true">
+			<classes dir="classes" />
+			<lib dir="${lib.dir}" />
+			<fileset dir="WebContent">
+				<exclude name="WEB-INF/web.xml" />
+			</fileset>
+		</war>
 	</target>
 
 	<target name="generate-schema" depends='compile' description="Generate schema">

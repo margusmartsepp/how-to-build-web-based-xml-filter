@@ -21,9 +21,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
-import com.google.appengine.repackaged.com.google.common.base.Preconditions;
-import com.google.appengine.repackaged.com.google.common.collect.Lists;
-import entity.CompensationDateSpan;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
 
 // TODO: Auto-generated Javadoc
 /**
