@@ -6,7 +6,7 @@
 	<property name='app.name' value='Filter XML' />
 
 	<property name="src.dir" value="src" />
-	<property name="lib.dir" value="lib" />
+	<property name="lib.dir" value="WebContent/WEB-INF/lib" />
 	<property name="classes.dir" value="classes" />
 	<property name="test.dir" value="test" />
 	<property name="data.dir" value="data" />
@@ -26,13 +26,13 @@
 	<!-- Defines XJC and SchemaGen tasks -->
 	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
 		<classpath>
-			<fileset dir="lib" includes="*.jar" />
+			<fileset dir="${lib.dir}" includes="*.jar" />
 		</classpath>
 	</taskdef>
 
 	<taskdef name="schemagen" classname="com.sun.tools.jxc.SchemaGenTask">
 		<classpath>
-			<fileset dir="lib" includes="*.jar" />
+			<fileset dir="${lib.dir}" includes="*.jar" />
 		</classpath>
 	</taskdef>
 
@@ -81,7 +81,7 @@
 		<mkdir dir="${data.schema.dir}" />
 		<schemagen srcdir="${src.dir}" destdir="${data.schema.dir}">
 			<classpath>
-				<fileset dir="lib" includes="*.jar" />
+				<fileset dir="${lib.dir}" includes="*.jar" />
 			</classpath>
 		</schemagen>
 	</target>
