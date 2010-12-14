@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
@@ -95,7 +96,7 @@ import com.google.common.collect.Maps;
 	}
 
 	/** The dep wage sum. */
-	protected HashMap<String, Double> depWageSum = Maps.newHashMap();
+	@XmlJavaTypeAdapter(StringToDoubleMapAdapter.class) protected HashMap<String, Double> depWageSum = Maps.newHashMap();
 
 	/** The bd. */
 	transient private BigDecimal bd = BigDecimal.ZERO;
