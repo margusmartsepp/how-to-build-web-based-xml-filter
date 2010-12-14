@@ -214,24 +214,6 @@ public class ObjectFactoryTest {
 	}
 
 	/**
-	 * Run the MapTypeEntry createMapTypeEntry() method test.
-	 * 
-	 * @throws Exception
-	 * 
-	 * @generatedBy CodePro at 6.12.10 1:06
-	 */
-	@Test public void testCreateMapTypeEntry_1() throws Exception {
-		ObjectFactory fixture = new ObjectFactory();
-
-		MapTypeEntry result = fixture.createMapTypeEntry();
-
-		// add additional test code here
-		assertNotNull(result);
-		assertEquals(0.0, result.getValue(), 1.0);
-		assertEquals(null, result.getKey());
-	}
-
-	/**
 	 * Run the Person createPerson() method test.
 	 * 
 	 * @throws Exception

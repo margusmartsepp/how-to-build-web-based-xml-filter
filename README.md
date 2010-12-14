@@ -28,4 +28,4 @@ To generate schema and source from it
     
 To make JavaDoc
 
-    ant clean compile JavaDoc
+    ant clean compile javadoc

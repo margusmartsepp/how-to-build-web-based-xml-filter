@@ -16,8 +16,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class) @Suite.SuiteClasses({ StringToDoubleMapAdapterTest.class,
 		HumanResourcesTest.class, CompensationDateSpanTest.class,
 		ObjectFactoryTest.class, EmployeeTest.class, DataTest.class,
-		ReportTest.class, PersonTest.class, MapTypeEntryTest.class,
-		ContactInfoTest.class, entity.adhoc.TestAll.class }) public class TestAll {
+		ReportTest.class, PersonTest.class, ContactInfoTest.class,
+		entity.adhoc.TestAll.class }) public class TestAll {
 
 	/**
 	 * Launch the test.

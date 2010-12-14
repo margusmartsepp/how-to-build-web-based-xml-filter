@@ -13,15 +13,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
-import entity.CompensationDateSpan;
-import entity.ContactInfo;
-import entity.Data;
-import entity.Employee;
-import entity.HumanResources;
-import entity.MapTypeEntry;
-import entity.Person;
-import entity.Report;
-import entity.StringToDoubleMapAdapter;
+import entity.StringToDoubleMapAdapter.MapTypeEntry;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -68,8 +60,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link Employee }.
 	 * 
-	
-	 * @return the employee */
+	 * 
+	 * @return the employee
+	 */
 	public Employee createEmployee() {
 		return new Employee();
 	}
@@ -77,8 +70,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link Data }.
 	 * 
-	
-	 * @return the data */
+	 * 
+	 * @return the data
+	 */
 	public Data createData() {
 		return new Data();
 	}
@@ -86,8 +80,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link Report }.
 	 * 
-	
-	 * @return the raport */
+	 * 
+	 * @return the raport
+	 */
 	public Report createRaport() {
 		return new Report();
 	}
@@ -95,8 +90,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link CompensationDateSpan }.
 	 * 
-	
-	 * @return the compensation date span */
+	 * 
+	 * @return the compensation date span
+	 */
 	public CompensationDateSpan createCompensationDateSpan() {
 		return new CompensationDateSpan();
 	}
@@ -104,8 +100,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link ContactInfo }.
 	 * 
-	
-	 * @return the contact info */
+	 * 
+	 * @return the contact info
+	 */
 	public ContactInfo createContactInfo() {
 		return new ContactInfo();
 	}
@@ -113,8 +110,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link StringToDoubleMapAdapter }.
 	 * 
-	
-	 * @return the string to double map adapter */
+	 * 
+	 * @return the string to double map adapter
+	 */
 	public StringToDoubleMapAdapter createStringToDoubleMapAdapter() {
 		return new StringToDoubleMapAdapter();
 	}
@@ -122,8 +120,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link HumanResources }.
 	 * 
-	
-	 * @return the human resources */
+	 * 
+	 * @return the human resources
+	 */
 	public HumanResources createHumanResources() {
 		return new HumanResources();
 	}
@@ -131,8 +130,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link Person }.
 	 * 
-	
-	 * @return the person */
+	 * 
+	 * @return the person
+	 */
 	public Person createPerson() {
 		return new Person();
 	}
@@ -140,8 +140,9 @@ import entity.StringToDoubleMapAdapter;
 	/**
 	 * Create an instance of {@link MapTypeEntry }.
 	 * 
-	
-	 * @return the map type entry */
+	 * 
+	 * @return the map type entry
+	 */
 	public MapTypeEntry createMapTypeEntry() {
 		return new MapTypeEntry();
 	}
@@ -152,8 +153,9 @@ import entity.StringToDoubleMapAdapter;
 	 * 
 	 * @param value
 	 *        the value
-	
-	 * @return the JAXB element< human resources> */
+	 * 
+	 * @return the JAXB element< human resources>
+	 */
 	@XmlElementDecl(namespace = "", name = "humanResources") public JAXBElement<HumanResources> createHumanResources(
 			HumanResources value) {
 		return new JAXBElement<HumanResources>(_HumanResources_QNAME,
@@ -165,8 +167,9 @@ import entity.StringToDoubleMapAdapter;
 	 * 
 	 * @param value
 	 *        the value
-	
-	 * @return the JAXB element< person> */
+	 * 
+	 * @return the JAXB element< person>
+	 */
 	@XmlElementDecl(namespace = "", name = "person") public JAXBElement<Person> createPerson(
 			Person value) {
 		return new JAXBElement<Person>(_Person_QNAME, Person.class, null, value);
@@ -177,8 +180,9 @@ import entity.StringToDoubleMapAdapter;
 	 * 
 	 * @param value
 	 *        the value
-	
-	 * @return the JAXB element< raport> */
+	 * 
+	 * @return the JAXB element< raport>
+	 */
 	@XmlElementDecl(namespace = "", name = "raport") public JAXBElement<Report> createRaport(
 			Report value) {
 		return new JAXBElement<Report>(_Raport_QNAME, Report.class, null, value);
@@ -190,8 +194,9 @@ import entity.StringToDoubleMapAdapter;
 	 * 
 	 * @param value
 	 *        the value
-	
-	 * @return the JAXB element< compensation date span> */
+	 * 
+	 * @return the JAXB element< compensation date span>
+	 */
 	@XmlElementDecl(namespace = "", name = "compensationDateSpan") public JAXBElement<CompensationDateSpan> createCompensationDateSpan(
 			CompensationDateSpan value) {
 		return new JAXBElement<CompensationDateSpan>(_CompensationDateSpan_QNAME,
@@ -203,8 +208,9 @@ import entity.StringToDoubleMapAdapter;
 	 * 
 	 * @param value
 	 *        the value
-	
-	 * @return the JAXB element< data> */
+	 * 
+	 * @return the JAXB element< data>
+	 */
 	@XmlElementDecl(namespace = "", name = "data") public JAXBElement<Data> createData(
 			Data value) {
 		return new JAXBElement<Data>(_Data_QNAME, Data.class, null, value);
@@ -216,8 +222,9 @@ import entity.StringToDoubleMapAdapter;
 	 * 
 	 * @param value
 	 *        the value
-	
-	 * @return the JAXB element< employee> */
+	 * 
+	 * @return the JAXB element< employee>
+	 */
 	@XmlElementDecl(namespace = "", name = "employee") public JAXBElement<Employee> createEmployee(
 			Employee value) {
 		return new JAXBElement<Employee>(_Employee_QNAME, Employee.class, null,
